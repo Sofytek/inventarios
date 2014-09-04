@@ -1,7 +1,7 @@
 <?php
 require_once 'SystemControl.php';
 require_once '../Model/Empresa.php';
-require_once '../bdcontrol/DataAcces.php';
+//require_once '../bdcontrol/DataAcces.php';
 //require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/Model/Empresa.php";
 //require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/bdcontrol/DataAcces.php";
 
@@ -48,7 +48,7 @@ abstract class ControlEmpresa extends SystemControl
 	
 	final protected function consultarEmpresas()
 	{
-		return DataAccess::reportar($this->empresa);
+		return DataAccess::selectWhere($this->empresa, " ");
 	}
 }
 ?>

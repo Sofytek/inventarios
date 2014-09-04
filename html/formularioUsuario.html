@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Usuario</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+      <!-- Logo Empresa -->
+      <div class="row">
+        <div class="col-md-4">
+          <img src="./imagenes/logo.gif">
+      	</div>
+      	<div class="col-md-4">
+      		<h1>Sofyinventarios<br> 
+      		<small> v. Beta </small>
+      		</h1>
+      	</div>
+      </div>	
+    </div>
+
+      
+    <!-- menu superior -->
+     <div class="container" style="padding-top: 1em;">
+  		 <ul class="nav nav-tabs nav-justified">
+    		 <li><a href="main.html">Inicio</a></li>
+		     <li><a href="Empresa.html">Empresa</a></li>
+		     <li class="active"><a href="Usuario.html">Usuario</a></li>
+		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
+	  	 </ul>
+	   </div> 
+	<!-- menu lateral -->
+    <div class="container">
+      <div class="row">
+			<div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="formularioUsuario.html">Registrar</a></li>
+		     		<li><a href="../Logica/ScriptsPHP/consultaUsuario.php">Reportar</a></li>
+		     		<li><a href="main.html">Volver</a></li>
+				</ul>
+      		</div>
+   
+    <!-- formulario ingreso de datos -->
+        <div class="col-md-4">
+	      <form class="form-horizontal" method="post" action="../logica/ScriptsPHP/requestEmpresa.php">
+	
+	        <fieldset>
+	
+	        <!-- Form Name -->
+	        <legend>Ingresar una nueva Empresa</legend>
+	
+	        <!-- nombresUsuario-->
+	        <div class="control-group">
+	          <label class="control-label" for="nombresUsuario">Nombres </label>
+	            <div class="controls">
+	              <input id="nombres" name="nombres" type="text" placeholder="Nombres usuario" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        <!-- apellidosUsuario-->
+	        <div class="control-group">
+	          <label class="control-label" for="apellidosUsuario">apellidos </label>
+	            <div class="controls">
+	              <input id="apellidos" name="apellidos" type="text" placeholder="Apellidos usuario" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        <!-- cedula-->
+	        <div class="control-group">
+	          <label class="control-label" for="cedulaUsuario">Cedula </label>
+	            <div class="controls">
+	              <input id="cedula" name="cedula" type="text" placeholder="Cedula usuario" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        <!-- direccion-->
+	        <div class="control-group">
+	          <label class="control-label" for="direccionUsuario">Direccion </label>
+	            <div class="controls">
+	              <input id="direccion" name="direccion" type="text" placeholder="Direccion residencia" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        <!-- ciudad -->
+	        <div class="control-group">
+	          <label class="control-label" for="ciudadUsuario">Ciudad </label>
+	            <div class="controls">
+	              <input id="ciudad" name="ciudad" type="text" placeholder="Ciudad residencia" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        <!-- Telefono -->
+	        <div class="control-group">
+	          <label class="control-label" for="telefonoUsuario">Telefono </label>
+	            <div class="controls">
+	              <input id="telefono" name="telefono" type="text" placeholder="telefono" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        <!-- correo -->
+	        <div class="control-group">
+	          <label class="control-label" for="correoUsuario">Correo </label>
+	            <div class="controls">
+	              <input id="correo" name="correo" type="text" placeholder="correo" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        <!-- Dependencia -->
+	        <div class="row">
+	        <div class="control-group">
+	        	<div class="col-xs-6">	
+	          		<label class="control-label" for="correoUsuario">Dependencia</label>
+	            		<div class="controls">
+			        		<select class="form-control" id = "dependencia" class="input-xlarge">
+					  			<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+				</div>
+				</div>
+	        </div>
+        
+	        <!-- checkBox -->
+	        <div class="checkbox">    
+	              <label for="checkboxes-0">      
+	                <input name="activo" id="activo" value="1" type="checkbox">Activo
+	              </label>	
+	        </div>
+	
+	        <!-- Button -->
+	        <div class="control-group">
+	          <label class="control-label" for="botonGuardarUsuario">Guardar</label>
+	          <div class="controls">
+	            <button id="botonGuardarEmpresa" name="botonGuardarEmpresa" class="btn btn-primary">Guardar</button>
+	          </div>
+	        </div>
+	        </fieldset>
+        </form> 
+	  </div>
+	</div>
+	</div>    		
+	</body>
+</html>

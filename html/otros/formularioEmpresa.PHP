@@ -1,13 +1,3 @@
-<?php
-require_once ('../Controler/HCempresa.php');
-    session_start();
-  
-  	$control = new HCempresa($_SESSION);
-  	$control ->cargarEmpresa(null, null);
-  	$result = $control->obtenerConsulta();
-	
-?>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -35,64 +25,42 @@ require_once ('../Controler/HCempresa.php');
     <body>
     
     <div class="container">
-      <!-- Logo Empresa -->
+      <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
           <img src="imagenes/logo.gif">
-      	</div>
-      	<div class="col-md-4">
-      		<h1>Sofyinventarios<br> 
-      		<small> v. Beta </small>
-      		</h1>
-      	</div>
-      </div>	
+        </div>
+      </div>
     </div>
-
-      
-    <!-- menu superior -->
-     <div class="container" style="padding-top: 1em;">
-  		 <ul class="nav nav-tabs nav-justified">
-    		 <li><a href="#">Inicio</a></li>
-		     <li><a href="formularioEmpresa.html">Agregar Empresa</a></li>
-		     <li><a href="#">Salir</a></li>
-	  	 </ul>
-	   </div> 
     <p>
     <div class="container">
-		<div class="row">
-			<div class="col-md-2">
-				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioEmpresa.html">Registrar</a></li>
-		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaEmpresa.php">Reportar</a></li>
-		     		<li><a href="main.html">Volver</a></li>
-				</ul>
-      		</div>
-      		<div class="col-md-10">
-				<div class="container" style="padding-top: 1em;">
-			  		<table class="table table-hover">
-			  			<thead>
-			    			<tr>
-			      				<th>ID</th>
-			      				<th>Nombre Empresa</th>
-			      				<th>Activo</th>
-			    			</tr>
-			  			</thead>
-			  		<tbody>
-			      	<?php	$count = count($result); 
-			      			for ($index = 0; $index < $count; $index++) { 
-								$row = $result[$index]; ?>
-						<tr>	
-							<td><?php echo $row['idempresa'];?></td>
-						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo $row['activo'];?></td>
-						</tr>
-					<?php 	} ?> 
-			       </table>     
-			     </div>		
-      		</div>
-		</div>               
-    </div>
-    
+      <form class="form-horizontal" method="get" action="../logica/Controler/requestEmpresa.php">
+
+        <fieldset>
+
+        <!-- Form Name -->
+        <legend>Ingresar una nueva Empresa</legend>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="nombreEmpresa">Nombre </label>
+            <div class="controls">
+              <input id="nombreEmpresa" name="nombreEmpresa" type="text" placeholder="Nombre Empresa" class="input-xlarge" required="">
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="control-group">
+          <label class="control-label" for="botonGuardarEmpresa"></label>
+          <div class="controls">
+            <button id="botonGuardarEmpresa" name="botonGuardarEmpresa" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+
+        </fieldset>
+        </form>        
+      </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
@@ -109,5 +77,5 @@ require_once ('../Controler/HCempresa.php');
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-    </body> 
+    </body>
 </html>

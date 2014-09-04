@@ -3,8 +3,8 @@ require_once ('../Controler/HCempresa.php');
 //require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/Controler/HCempresa.php";
 
   session_start();
-  $empresa = $_POST['empresa'];
-  $activo = $_POST['activo'];
+  $empresa = $_POST['Nempresa'];
+  $activo = $_POST['Eactivo'];
   
   $control = new HCempresa($_SESSION);
   
@@ -13,7 +13,7 @@ require_once ('../Controler/HCempresa.php');
     try{
       $control->crearEmpresa();
     }catch(Exception $e){
-      echo $e;
+      echo $e->getMessage();
     }
   }else{
     //creacion de mensaje de respuesta (P)  
