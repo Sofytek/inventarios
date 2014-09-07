@@ -15,7 +15,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </head>  
   <body>         
-    <form class="form-horizontal" action="../logica/Controler/requestEmpresa.php" method="POST">
+    <form class="form-horizontal" action="../logica/ScriptsPHP/requestEmpresa.php" method="POST">
       <fieldset>
         <!-- Form Name -->
         <legend>Registro Empresa
