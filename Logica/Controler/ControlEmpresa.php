@@ -13,8 +13,8 @@ abstract class ControlEmpresa extends SystemControl
 		$this->empresa = null;
 	}
 
-	public function setEmpresa($nombre, $activo){
-		$this->empresa = new Empresa(0, $nombre, $activo);		
+	public function setEmpresa($arrempresa){
+		$this->empresa = new Empresa($arrempresa);		
 	}
 
 	/*
@@ -27,7 +27,7 @@ abstract class ControlEmpresa extends SystemControl
 			throw new Exception('Empresa sin datos');
 		}
 		DataAccess::write($this->empresa);
-		
+		echo TRUE;
 	}
 	
 	//modifica una empresa existente

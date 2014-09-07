@@ -44,8 +44,7 @@ Class DataAccess {
 				$query .= ");";
 			}
 		}
-		echo $query." ";
-		echo $dbconexion;
+		
 		$result = pg_query($dbconexion, $query); // or die("FAllo");
 
 		if (!$result) {
@@ -165,7 +164,6 @@ Class DataAccess {
 		$query = "SELECT * FROM " . self::$CONST_PREFIX . $table . " WHERE " . pg_escape_string($columName[3]) . " = '" . pg_escape_string($values[3]) . "' AND ".
 			pg_escape_string($columName[5]) . " = '" . pg_escape_string($values[5]) ."' ;";
 		
-    	echo $dbconexion;
 		$result = pg_query($dbconexion, $query);
 		//echo $result;
 		if ($result == null) 
@@ -181,7 +179,7 @@ Class DataAccess {
 		}
 		
 		$dataAccess -> setData($row);
-		echo $row[0];
+		//echo $row[0];
 		
 		return TRUE;
 	}

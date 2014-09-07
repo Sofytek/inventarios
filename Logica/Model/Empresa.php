@@ -19,10 +19,11 @@ class Empresa implements IDataAccess{
 		$this->idEmpresa = $idEmpresa;
 	}
 */
-	public function __construct($idEmpresa = null, $nombre = null, $activo = null){
-		$this->idEmpresa = $idEmpresa;
-		$this->nombre = $nombre;
-		$this->activo = $activo;
+	public function __construct($arrempresa = null){
+		if($arrempresa != null)
+		{
+			$this->setData($arrempresa);
+		}
 	}
 	
 	//Setters and Getters
@@ -55,16 +56,18 @@ class Empresa implements IDataAccess{
 		return "Empresa";
 	}
 
-	public function getData(){
+	public function getData()
+	{
 		$columName = array("idempresa", "nombre", "activo");
 		$values = array($this->idEmpresa, $this->nombre, $this->activo);
     	return array($columName, $values);
 	}
 
-	public function setData($arrayData){
-		$this->idEmpresa=$arrayData[0];
-		$this->nombre=$arrayData[1];
-		$this->activo=$arrayData[2];
+	public function setData($arrayData)
+	{
+		$this->idEmpresa = $arrayData['idempresa'];
+		$this->nombre = $arrayData['nombre'];
+		$this->activo = $arrayData['activo'];
 	}
 }
 

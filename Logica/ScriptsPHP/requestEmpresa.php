@@ -3,13 +3,12 @@ require_once ('../Controler/HCempresa.php');
 //require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/Controler/HCempresa.php";
 
   session_start();
-  $empresa = $_POST['Nempresa'];
-  $activo = $_POST['Eactivo'];
+  $arrempresa = ($_POST['Json']);
   
   $control = new HCempresa($_SESSION);
   
-  if($empresa != null){
-    $control->cargarEmpresa($empresa, $activo);
+  if($arrempresa != null){
+    $control->cargarEmpresa($arrempresa);
     try{
       $control->crearEmpresa();
     }catch(Exception $e){

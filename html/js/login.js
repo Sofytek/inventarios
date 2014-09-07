@@ -43,14 +43,29 @@ function logon()
 
 function resul (argument) {
   
-  	setTimeout ("redireccionar()", 2000); 
-  	alert(argument);
+  	if(argument == 1)
+  	{
+	  	setTimeout ("redireccionar("+argument+")", 2000); 
+	  	alert("Bienvenido");
+  	}
+  	else
+  	{
+  		setTimeout("(redireccionar("+argument+")", 2000);	
+  	}
   	
 //var obj = JSON.parse(argument);
   //if(obj.)
 }
 
-function redireccionar()
+function redireccionar(argument)
 {
-	location.href = "main.html";	
+	if(argument == 1)
+	{
+		location.href = "main.html";		
+	}
+	else
+	{
+		location.href = "index.html";		
+	}
+	
 }
