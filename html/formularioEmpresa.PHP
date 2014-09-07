@@ -25,42 +25,41 @@
     <body>
     
     <div class="container">
-      <!-- Logo Empresa -->
+      <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
           <img src="imagenes/logo.gif">
-      	</div>
-      	<div class="col-md-4">
-      		<h1>Sofyinventarios<br> 
-      		<small> v. Beta </small>
-      		</h1>
-      	</div>
-      </div>	
+        </div>
+      </div>
     </div>
-
-      
-    <!-- menu superior -->
-     <div class="container" style="padding-top: 1em;">
-  		 <ul class="nav nav-tabs nav-justified">
-    		 <li><a href="main.html">Inicio</a></li>
-		     <li class="active"><a href="Empresa.html">Empresa</a></li>
-         <li><a href="Linea.html">Linea</a></li>
-		     <li><a href="Usuario.html">Usuario</a></li>
-		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
-	  	 </ul>
-	   </div> 
     <p>
     <div class="container">
-		<div class="row">
-			<div class="col-md-2">
-				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioEmpresa.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultaEmpresa.php">Reportar</a></li>
-		     		<li><a href="main.html">Volver</a></li>
-				</ul>
-      		</div>
-		</div>               
-    </div>
+      <form class="form-horizontal" method="get" action="../logica/Controler/requestEmpresa.php">
+
+        <fieldset>
+
+        <!-- Form Name -->
+        <legend>Ingresar una nueva Empresa</legend>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="nombreEmpresa">Nombre </label>
+            <div class="controls">
+              <input id="nombreEmpresa" name="nombreEmpresa" type="text" placeholder="Nombre Empresa" class="input-xlarge" required="">
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="control-group">
+          <label class="control-label" for="botonGuardarEmpresa"></label>
+          <div class="controls">
+            <button id="botonGuardarEmpresa" name="botonGuardarEmpresa" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+
+        </fieldset>
+        </form>        
+      </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>

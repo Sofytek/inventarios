@@ -29,5 +29,4 @@
 
 	$salidaJson = array('respuesta' => $mensajeOk, 'mensaje' => $mensajeError);
 	echo json_encode($salidaJson);
-
 ?>
