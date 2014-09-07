@@ -10,6 +10,10 @@ abstract class ControlLinea extends SystemControl
 		$this->linea = null;
 	}
 
+	public function __destruct(){
+        parent::__destruct();
+    }
+
 	public function setLinea($arrlinea){
 		$this->linea = new Linea($arrlinea);		
 	}
@@ -45,7 +49,7 @@ abstract class ControlLinea extends SystemControl
 	
 	final protected function consultarLinea()
 	{
-		return DataAccess::selectWhere($this->linea, " ");
+		return DataAccess::selectWhere($this->linea);
 	}
 }
 ?>

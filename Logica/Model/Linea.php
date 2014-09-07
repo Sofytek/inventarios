@@ -54,7 +54,7 @@ class Linea implements IDataAccess{
 
 	public function setData($arrayData)
 	{
-		$this->idLinea = Tools::validate($arrayData['idempresa']);
+		$this->idLinea = Tools::validate($arrayData['idlinea']);
 		$this->nombre = Tools::validate($arrayData['nombre']);
 		$this->activo = Tools::validate($arrayData['activo']);
 	}
