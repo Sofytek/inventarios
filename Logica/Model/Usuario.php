@@ -1,6 +1,6 @@
 <?php
+require_once ('Tools.php');
 require_once ('../bdcontrol/IDataAccess.php');
-//require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/bdcontrol/IDataAccess.php";
 
 class Usuario implements IDataAccess{
 		
@@ -93,22 +93,23 @@ class Usuario implements IDataAccess{
     	return array($columName, $values);
 	}
 
-	public function setData($arrayData){
-		$this-> idUsuario = $arrayData[0];
-		$this-> nombres = $arrayData[1];
-		$this-> apellidos = $arrayData[2];
-		$this-> usuario = $arrayData[3];
-		$this-> correo = $arrayData[4];
-		$this-> contrasenia = $arrayData[5];
-		$this-> cedula = $arrayData[6];
-		$this-> direccion = $arrayData[7];
-		$this-> ciudad = $arrayData[8];
-		$this-> telefono = $arrayData[9];
-		$this-> activo = $arrayData[10];
-		$this-> idEmpresa = $arrayData[11];
-		$this-> idDependencia = $arrayData[12];
-		$this-> idSeccion = $arrayData[13];
-		$this-> idRol = $arrayData[14];
+	public function setData($arrayData)
+	{
+		$this-> idUsuario = Tools::validate($arrayData['idUsuario']);
+		$this-> nombres = Tools::validate($arrayData['nombres']);
+		$this-> apellidos = Tools::validate($arrayData['apellidos']);
+		$this-> usuario = Tools::validate($arrayData['usuario']);
+		$this-> correo = Tools::validate($arrayData['correo']);
+		$this-> contrasenia = Tools::validate($arrayData['contrasenia']);
+		$this-> cedula = Tools::validate($arrayData['cedula']);
+		$this-> direccion = Tools::validate($arrayData['direccion']);
+		$this-> ciudad = Tools::validate($arrayData['ciudad']);
+		$this-> telefono = Tools::validate($arrayData['telefono']);
+		$this-> activo = Tools::validate($arrayData['activo']);
+		$this-> idEmpresa = Tools::validate($arrayData['idEmpresa']);
+		$this-> idDependencia = Tools::validate($arrayData['idDependencia']);
+		$this-> idSeccion = Tools::validate($arrayData['idSeccion']);
+		$this-> idRol = Tools::validate($arrayData['idRol']);
 	}
 }
 

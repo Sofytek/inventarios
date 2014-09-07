@@ -1,24 +1,13 @@
 <?php
+require_once ('Tools.php');
 require_once ('../bdcontrol/IDataAccess.php');
-//require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/bdcontrol/IDataAccess.php";
 
 class Empresa implements IDataAccess{
 
 	private $idEmpresa;
 	private $nombre;
 	private $activo;
-	/*public function __construct(){
-		$a = func_get_args(); 
-        $i = func_num_args(); 
-        if (method_exists($this,$f='__construct'.$i)) { 
-            call_user_func_array(array($this,$f),$a); 
-        } 
-	}
 
-	public function __construct1($idEmpresa){
-		$this->idEmpresa = $idEmpresa;
-	}
-*/
 	public function __construct($arrempresa = null){
 		if($arrempresa != null)
 		{
@@ -65,9 +54,9 @@ class Empresa implements IDataAccess{
 
 	public function setData($arrayData)
 	{
-		$this->idEmpresa = $arrayData['idempresa'];
-		$this->nombre = $arrayData['nombre'];
-		$this->activo = $arrayData['activo'];
+		$this->idEmpresa = Tools::validate($arrayData['idempresa']);
+		$this->nombre = Tools::validate($arrayData['nombre']);
+		$this->activo = Tools::validate($arrayData['activo']);
 	}
 }
 

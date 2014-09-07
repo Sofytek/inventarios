@@ -1,4 +1,5 @@
 <?php
+require_once ('Tools.php');
 require_once ('../bdcontrol/IDataAccess.php');
 
 class Linea implements IDataAccess{
@@ -53,9 +54,9 @@ class Linea implements IDataAccess{
 
 	public function setData($arrayData)
 	{
-		$this->idEmpresa = $arrayData['idempresa'];
-		$this->nombre = $arrayData['nombre'];
-		$this->activo = $arrayData['activo'];
+		$this->idLinea = Tools::validate($arrayData['idempresa']);
+		$this->nombre = Tools::validate($arrayData['nombre']);
+		$this->activo = Tools::validate($arrayData['activo']);
 	}
 }
 

@@ -14,5 +14,4 @@ if(isset($usuario, $password)){
 }else{
     echo "Campos requeridos en null";
 }
-
 ?>

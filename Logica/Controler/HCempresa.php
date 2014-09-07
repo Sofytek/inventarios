@@ -6,6 +6,11 @@ class HCempresa extends ControlEmpresa{
 		parent::__construct($session);
 	}
 
+    public function __destruct()
+    {
+        parent::__destruct();
+    }
+
 	public function cargarEmpresa($arrempresa){
 		parent::setEmpresa($arrempresa);
 	}
@@ -14,6 +19,5 @@ class HCempresa extends ControlEmpresa{
 	{
 		return $result = parent::consultarEmpresas();
 	}
-
 }
 ?>
