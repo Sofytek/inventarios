@@ -77,6 +77,10 @@ class Usuario implements IDataAccess{
 		return $this->contrasenia;
 	}
 	
+	public function getApellidos(){
+		return $this->apellidos;
+	}
+	
 
 	//implementacion de los metodos de IDataAcces
 	public function getTitle(){
@@ -95,7 +99,7 @@ class Usuario implements IDataAccess{
 
 	public function setData($arrayData)
 	{
-		$this-> idUsuario = Tools::validate($arrayData['idUsuario']);
+		$this-> idUsuario = Tools::validate($arrayData['idusuario']);
 		$this-> nombres = Tools::validate($arrayData['nombres']);
 		$this-> apellidos = Tools::validate($arrayData['apellidos']);
 		$this-> usuario = Tools::validate($arrayData['usuario']);

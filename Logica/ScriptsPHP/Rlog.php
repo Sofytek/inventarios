@@ -8,8 +8,17 @@ $password = $_REQUEST['password'];
 if(isset($usuario, $password)){
     try {
         $controlLog = new HClog($_SESSION, $usuario, $password);
-    } catch (exception $e) {
-        echo "ERROR: " . $e->getMessage();
+		echo TRUE;
+		
+		/*["proceso":"true"]
+		["Usuario":$_SESSION['usuario']]
+		["Menu" :
+		{"modulo":nombre,"submenu":[grabar: ..] }
+		]*/
+    }
+	catch (exception $e) 
+    {	
+        echo ": " . $e->getMessage();
     }    
 }else{
     echo "Campos requeridos en null";

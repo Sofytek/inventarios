@@ -41,16 +41,16 @@ abstract class SystemControl {
 
        	if (DataAccess::Login($this -> usuario)) 
        	{
-			if ($this -> usuario -> getActivo()) 
+			if (!$this -> usuario -> getActivo()) 
 			{
-				echo FALSE;	
 				throw new Exception('Usuario Inactivo');
 			}
 			
 			$session['id'] = $this -> usuario -> getIdUsuario();
-			$session['Usuario'] = $this -> usuario -> getNombres(); //. " " . $this -> usuario -> getApellidos;
-			$session['logon'] = TRUE;
+			$session['Usuario'] = $this -> usuario -> getNombres(). " " . $this -> usuario -> getApellidos();
+			$session['logon'] = TRUE; 
 			//$this->getRoles();
+			return TRUE;
 		}
 		else
 		{

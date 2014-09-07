@@ -23,8 +23,8 @@
 		});
 	});
 });*/
-
- $(document).ready(onclick);
+var doc = $(document);
+ doc.ready(onclick);
 
 function onclick(){
 	$("#iniciar").click(logon);
@@ -43,6 +43,16 @@ function logon()
 
 function resul (argument) {
   
+  	/*
+  	 var obj = JSON.parse(argument);
+  	if(obj.proceso){
+  		//post main
+  	}
+  	else
+  	{
+ 		//doc. pasa el div visble y le da el mensaje del json 		
+  	}*/
+  	
   	if(argument == 1)
   	{
 	  	setTimeout ("redireccionar("+argument+")", 2000); 
@@ -51,10 +61,7 @@ function resul (argument) {
   	else
   	{
   		setTimeout("(redireccionar("+argument+")", 2000);	
-  	}
-  	
-//var obj = JSON.parse(argument);
-  //if(obj.)
+  	} 
 }
 
 function redireccionar(argument)

@@ -3,7 +3,7 @@ require_once ('../Controler/HCempresa.php');
     session_start();
   
   	$control = new HCempresa($_SESSION);
-  	$control ->cargarEmpresa(null, null);
+  	$control ->cargarEmpresa(null);
   	$result = $control->obtenerConsulta();
 	
 ?>
