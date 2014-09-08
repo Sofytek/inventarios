@@ -11,7 +11,7 @@ class Usuario implements IDataAccess{
 	private $usuario;
 	private $correo;
 	private $contrasenia;
-	private $cedula;
+	private $cc;
 	private $direccion;
 	private $ciudad;
 	private $telefono;
@@ -33,7 +33,7 @@ class Usuario implements IDataAccess{
         $this-> nombres ="";
         $this-> apellidos ="";
         $this-> correo ="";
-        $this-> cedula ="";
+        $this-> cc ="";
         $this-> direccion ="";
         $this-> ciudad ="";
         $this-> telefono ="";
@@ -89,11 +89,11 @@ class Usuario implements IDataAccess{
 
 	public function getData(){
         $columName = array("idUsuario", "nombres", "apellidos", "usuario", "correo", 
-			"contrasenia", "cedula", "direccion", "ciudad", "telefono", "activo", "idEmpresa", 
-			"idDependencia", "idSeccion", "idRol");
+			"contrasenia", "cc", "direccion", "ciudad", "telefono", "activo", "idEmpresa", 
+			"idDependencia", "idseccion_secciones");
 		$values = array($this-> idUsuario, $this-> nombres, $this-> apellidos, $this-> usuario, $this-> correo,
-			$this-> contrasenia, $this-> cedula, $this-> direccion, $this-> ciudad, $this-> telefono, $this-> activo,
-			$this-> idEmpresa, $this-> idDependencia, $this-> idSeccion, $this-> idRol);
+			$this-> contrasenia, $this-> cc, $this-> direccion, $this-> ciudad, $this-> telefono, $this-> activo,
+			$this-> idEmpresa, $this-> idDependencia, $this-> idSeccion);
     	return array($columName, $values);
 	}
 
@@ -105,14 +105,14 @@ class Usuario implements IDataAccess{
 		$this-> usuario = Tools::validate($arrayData['usuario']);
 		$this-> correo = Tools::validate($arrayData['correo']);
 		$this-> contrasenia = Tools::validate($arrayData['contrasenia']);
-		$this-> cedula = Tools::validate($arrayData['cedula']);
+		$this-> cc = Tools::validate($arrayData['cc']);
 		$this-> direccion = Tools::validate($arrayData['direccion']);
 		$this-> ciudad = Tools::validate($arrayData['ciudad']);
 		$this-> telefono = Tools::validate($arrayData['telefono']);
 		$this-> activo = Tools::validate($arrayData['activo']);
-		$this-> idEmpresa = Tools::validate($arrayData['idEmpresa']);
-		$this-> idDependencia = Tools::validate($arrayData['idDependencia']);
-		$this-> idSeccion = Tools::validate($arrayData['idSeccion']);
+		$this-> idEmpresa = 0;
+		$this-> idDependencia = 0;
+		$this-> idSeccion = Tools::validate($arrayData['idseccion']);
 		$this-> idRol = Tools::validate($arrayData['idRol']);
 	}
 }

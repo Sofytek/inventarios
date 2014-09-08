@@ -16,11 +16,15 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
+		
+		<script src="js/vendor/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/vendor/jquery.serializejson.js"></script>
+		<script type="text/javascript" src="js/vendor/jquery.serializejson.min.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	</head>
 
 	<body>
+	<script type="text/javascript" src="js/DataSender/DataSenderUsuario.js"></script>
 		<div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -41,7 +45,9 @@
   		 <ul class="nav nav-tabs nav-justified">
     		 <li><a href="main.html">Inicio</a></li>
 		     <li><a href="Empresa.html">Empresa</a></li>
-		     <li class="active"><a href="Usuario.html">Usuario</a></li>
+         	 <li><a href="Dependencia.html">Dependencia</a></li>
+         	 <li><a href="Linea.html">Linea</a></li>
+		     <li  class="active"><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
@@ -58,7 +64,7 @@
    
     <!-- formulario ingreso de datos -->
         <div class="col-md-4">
-	      <form class="form-horizontal" method="post" action="../logica/ScriptsPHP/requestEmpresa.php">
+	      <form class="form-horizontal" id="formularioUsuario"> <!--method="post" action="../logica/ScriptsPHP/requestEmpresa.php">
 	
 	        <fieldset>
 	
@@ -85,7 +91,7 @@
 	        <div class="control-group">
 	          <label class="control-label" for="cedulaUsuario">Cedula </label>
 	            <div class="controls">
-	              <input id="cedula" name="cedula" type="text" placeholder="Cedula usuario" class="input-xlarge" required="">
+	              <input id="cc" name="cc" type="text" placeholder="Cedula usuario" class="input-xlarge" required="">
 	            </div>
 	        </div>
 	        
@@ -121,13 +127,30 @@
 	            </div>
 	        </div>
 	        
-	        <!-- Dependencia -->
+	        <!-- usuario -->
+	        <div class="control-group">
+	          <label class="control-label" for="usuario">Usuario</label>
+	            <div class="controls">
+	              <input id="usuario" name="usuario" type="text" placeholder="usuario" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        <!-- constrasenia -->
+	        <div class="control-group">
+	          <label class="control-label" for="constrasenia">Contraseña</label>
+	            <div class="controls">
+	              <input type="password" name = "contrasenia" id="contrasenia" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	        
+	        
+	        <!-- Seccion -->
 	        <div class="row">
 	        <div class="control-group">
 	        	<div class="col-xs-6">	
-	          		<label class="control-label" for="correoUsuario">Dependencia</label>
+	          		<label class="control-label" for="seccion">Seccion</label>
 	            		<div class="controls">
-			        		<select class="form-control" id = "dependencia" class="input-xlarge">
+			        		<select class="form-control" name = "idseccion" id = "idseccion" class="input-xlarge">
 					  			<option>1</option>
 								<option>2</option>
 								<option>3</option>

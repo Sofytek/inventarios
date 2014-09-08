@@ -1,6 +1,6 @@
 <?php
 require 'ControlUsuario.php';
-class HCempresa extends ControlUsuario{
+class HCusuario extends ControlUsuario{
 
 	public function __construct($session){
 		parent::__construct($session);
@@ -12,7 +12,7 @@ class HCempresa extends ControlUsuario{
 	
 	public function obtenerConsulta()
 	{
-		return $result = parent::consultarEmpresas();
+		return $result = parent::consultarUsuarios();
 	}
 
 }

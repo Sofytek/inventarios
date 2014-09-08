@@ -25,6 +25,7 @@ Class DataAccess {
 	public static function write(IDataAccess $dataAccess) {
 		$result = null;
 		$table = $dataAccess -> getTitle();
+		$columname = $dataAccess -> getData()[0];
 		$dataArray = $dataAccess -> getData()[1];
 		$dbconexion = self::$dbcon;
 
@@ -32,8 +33,26 @@ Class DataAccess {
 			throw new Exception("Nombre de tabla ó datos NULOS :)");
 			return;
 		}
-
-		$query = "INSERT INTO " . self::$CONST_PREFIX . $table . " VALUES (Default,";
+		
+		
+		$query = "INSERT INTO " . self::$CONST_PREFIX . $table. "("; // INSERT INTO nombreTabla...
+		
+		$count = count($columname);
+		
+		for($index = 0; $index < $count; $index++)
+		{
+			$query .= "" .$columname[$index]. "";
+			if ($index + 1 < $count) 
+			{
+				$query .= ",";
+			} 
+			else 
+			{
+				$query .= ")";
+			}	
+		}
+		
+		$query .= " VALUES (Default,";
 		$count = count($dataArray);
 
 		for ($index = 1; $index < $count; $index++) {

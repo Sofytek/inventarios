@@ -1,9 +1,9 @@
 <?php
-require_once ('../Controler/HCempresa.php');
+require_once ('../Controler/HCusuario.php');
     session_start();
   
-  	$control = new HCempresa($_SESSION);
-  	$control ->cargarEmpresa(null);
+  	$control = new HCusuario($_SESSION);
+  	$control ->cargarUsuario(null);
   	$result = $control->obtenerConsulta();
 	
 ?>
@@ -53,9 +53,9 @@ require_once ('../Controler/HCempresa.php');
      <div class="container" style="padding-top: 1em;">
   		 <ul class="nav nav-tabs nav-justified">
     		 <li><a href="main.html">Inicio</a></li>
-		     <li class="active"><a href="Empresa.html">Empresa</a></li>
+		     <li><a href="Empresa.html">Empresa</a></li>
          	 <li><a href="Dependencia.html">Dependencia</a></li>
-         	 <li><a href="Linea.html">Linea</a></li>
+         	 <li class="active"><a href="Linea.html">Linea</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
@@ -72,12 +72,20 @@ require_once ('../Controler/HCempresa.php');
       		</div>
       		<div class="col-md-10">
 				<div class="container" style="padding-top: 1em;">
+			  		<div class="table-responsive">
 			  		<table class="table table-hover">
 			  			<thead>
 			    			<tr>
 			      				<th>ID</th>
-			      				<th>Nombre Empresa</th>
-			      				<th>Activo</th>
+			      				<th>Nombres</th>
+			      				<th>Apellidos</th>
+			      				<th>Cedula</th>
+			      				<th>Direccion</th>
+			      				<th>Ciudad</th>
+			      				<th>Telefono</th>
+			      				<th>Correo</th>
+			      				<th>Usuario</th>
+			      				<th>Seccion</th>
 			    			</tr>
 			  			</thead>
 			  		<tbody>
@@ -85,11 +93,19 @@ require_once ('../Controler/HCempresa.php');
 			      			for ($index = 0; $index < $count; $index++) { 
 								$row = $result[$index]; ?>
 						<tr>	
-							<td><?php echo $row['idempresa'];?></td>
-						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo $row['activo'];?></td>
+							<td><?php echo $row['idusuario'];?></td>
+						  	<td><?php echo $row['nombres'];?></td>
+						  	<td><?php echo $row['apellidos'];?></td>
+						  	<td><?php echo $row['cc'];?></td>
+						  	<td><?php echo $row['direccion'];?></td>
+						  	<td><?php echo $row['ciudad'];?></td>
+						  	<td><?php echo $row['telefono'];?></td>
+						  	<td><?php echo $row['correo'];?></td>
+						  	<td><?php echo $row['usuario'];?></td>
+						  	<td><?php echo $row['idseccion_secciones'];?></td>
 						</tr>
 					<?php 	} ?> 
+			       </div>	
 			       </table>     
 			     </div>		
       		</div>

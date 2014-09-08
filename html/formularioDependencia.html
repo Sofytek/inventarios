@@ -28,7 +28,7 @@
         
     </head>
     <body>
-    <script type="text/javascript" src="js/DataSender/DataSender.js"></script>
+    <script type="text/javascript" src="js/DataSender/DataSenderDependencia.js"></script>
     <div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -48,9 +48,11 @@
      <div class="container" style="padding-top: 1em;">
   		 <ul class="nav nav-tabs nav-justified">
     		 <li><a href="main.html">Inicio</a></li>
-		     <li class="active"><a href="formularioEmpresa.html">Empresa</a></li>
-		     <li><a href="Dependencia.html">Dependencia</a></li>
-		     <li><a href="#">Salir</a></li>
+		     <li><a href="Empresa.html">Empresa</a></li>
+         	 <li class="active"><a href="Dependencia.html">Dependencia</a></li>
+         	 <li><a href="Linea.html">Linea</a></li>
+		     <li><a href="Usuario.html">Usuario</a></li>
+		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
     
@@ -59,8 +61,8 @@
       <div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioEmpresa.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultarEmpresa.php">Reportar</a></li>
+					<li><a href="formularioDependencia.html">Registrar</a></li>
+		     		<li><a href="../Logica/ScriptsPHP/consultaDependencia.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
@@ -71,13 +73,13 @@
 	        <fieldset>
 	
 	        <!-- Form Name -->
-	        <legend>Ingresar una nueva Empresa</legend>
+	        <legend>Ingresar una nueva Dependencia</legend>
 	
 	        <!-- Text input-->
 	        <div class="control-group">
-	          <label class="control-label" for="nombreEmpresa">Nombre </label>
+	          <label class="control-label" for="nombreDependencia">Nombre </label>
 	            <div class="controls">
-	              <input id="empresa" name="empresa" type="text" placeholder="Nombre Empresa" class="input-xlarge" required="">
+	              <input id="dependencia" name="dependencia" type="text" placeholder="Nombre Dependencia" class="input-xlarge" required="">
 	            </div>
 	        </div>
         
@@ -87,12 +89,30 @@
 	                <input name="activo" id="activo" type="checkbox" value="1">Activo
 	              </label>	
 	        </div>
+	        
+	        <!-- Empresa -->
+	        <div class="row">
+	        <div class="control-group">
+	        	<div class="col-xs-6">	
+	          		<label class="control-label" for="Empresa">Empresa</label>
+	            		<div class="controls">
+			        		<select class="form-control" id = "empresa" class="input-xlarge">
+					  			<option>30</option>
+								<option>31</option>
+								<option>32</option>
+								<option>33</option>
+								<option>34</option>
+							</select>
+						</div>
+				</div>
+				</div>
+	        </div>
 	
 	        <!-- Button -->
 	        <div class="control-group">
-	          <label class="control-label" for="botonGuardarEmpresa"></label>
+	          <label class="control-label" for="botonGuardarDependencia"></label>
 	          <div class="controls">
-	            <input type = "submit" id="botonGuardarEmpresa" name="botonGuardarEmpresa" class="btn btn-primary" value="Guardar">
+	            <input type = "submit" id="botonGuardarDependencia" name="botonGuardarDependencia" class="btn btn-primary" value="Guardar">
 	          </div>
 	        </div>
 	        </fieldset>

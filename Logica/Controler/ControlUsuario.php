@@ -5,7 +5,7 @@ require_once '../Model/Usuario.php';
 //require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/Model/Empresa.php";
 //require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/bdcontrol/DataAcces.php";
 
-abstract class ControlEmpresa extends SystemControl
+abstract class ControlUsuario extends SystemControl
 {
 	private $usuario;
 	public function __construct($session){
@@ -14,8 +14,8 @@ abstract class ControlEmpresa extends SystemControl
 	}
 
 	public function setUsuario($arrayUsuario){
-		$this->empresa = new Usuario();
-		$this->empresa->setData($arrayUsuario);		
+		$this->usuario = new Usuario();
+		$this->usuario->setData($arrayUsuario);		
 	}
 	
 	//crea un ususario
@@ -43,7 +43,7 @@ abstract class ControlEmpresa extends SystemControl
 		DataAccess::delete($this->usuario);	
 	}
 	
-	final protected function consultarEmpresas()
+	final protected function consultarUsuarios()
 	{
 		return DataAccess::selectWhere($this->usuario, " ");
 	}

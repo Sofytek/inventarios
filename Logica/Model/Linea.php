@@ -42,7 +42,7 @@ class Linea implements IDataAccess{
 
 	//implementacion de los metodos de IDataAcces
 	public function getTitle(){
-		return "Linea";
+		return "linea";
 	}
 
 	public function getData()
