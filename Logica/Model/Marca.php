@@ -56,7 +56,7 @@ class Marca implements IDataAccess{
 	{
 		$this->idLinea = Tools::validate($arrayData['idmarca']);
 		$this->nombre = Tools::validate($arrayData['nombre']);
-		$this->activo = Tools::validate($arrayData['activo']);];
+		$this->activo = Tools::validate($arrayData['activo']);
 	}
 }
 
