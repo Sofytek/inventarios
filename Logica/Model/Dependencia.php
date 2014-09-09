@@ -1,6 +1,6 @@
 <?php
-require_once ('../Tools/Tools.php');
 require_once ('../bdcontrol/IDataAccess.php');
+//require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/bdcontrol/IDataAccess.php";
 
 class Dependencia implements IDataAccess{
 
@@ -64,9 +64,9 @@ class Dependencia implements IDataAccess{
 	public function setData($arrayData)
 	{
 		$this->idDependencia = $arrayData['iddependencia'];
-		$this->nombre = Tools::validate($arrayData['nombre']);
-		$this->activo = Tools::validate($arrayData['activo']);
-		$this->empresa = Tools::validate($arrayData['idempresa']);
+		$this->nombre = $arrayData['nombre'];
+		$this->activo = $arrayData['activo'];
+		$this->empresa = $arrayData['idempresa'];
 	}
 }
 

@@ -1,5 +1,5 @@
 <?php
-require_once ('../Tools/Tools.php');
+require_once ('Tools.php');
 require_once ('../bdcontrol/IDataAccess.php');
 
 class Usuario implements IDataAccess{
@@ -110,7 +110,7 @@ class Usuario implements IDataAccess{
 		$this-> ciudad = Tools::validate($arrayData['ciudad']);
 		$this-> telefono = Tools::validate($arrayData['telefono']);
 		$this-> activo = Tools::validate($arrayData['activo']);
-		$this-> idEmpresa = 0;//(p)se se llama un usuario desde el select??
+		$this-> idEmpresa = 0;
 		$this-> idDependencia = 0;
 		$this-> idSeccion = Tools::validate($arrayData['idseccion']);
 		$this-> idRol = Tools::validate($arrayData['idRol']);
