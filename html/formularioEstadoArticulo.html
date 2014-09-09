@@ -21,9 +21,14 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/jquery-1.11.1.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+
+        
     </head>
     <body>
-    
+    <script type="text/javascript" src="js/DataSender/DataSenderEstadoArticulo.js"></script>
     <div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -45,41 +50,61 @@
     		 <li><a href="main.html">Inicio</a></li>
 		     <li><a href="Empresa.html">Empresa</a></li>
          	 <li><a href="Dependencia.html">Dependencia</a></li>
+         	 <li><a href="Seccion.html">Seccion</a></li>
          	 <li><a href="Linea.html">Linea</a></li>
-           	 <li class = "active"><a href="Marca.html">Marca</a></li>
-           	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
+         	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
+    
     <p>
     <div class="container">
-		<div class="row">
+      <div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioMarca.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultaMarca.php">Reportar</a></li>
+					<li><a href="formularioEstadoArticulo.html">Registrar</a></li>
+		     		<li><a href="../Logica/ScriptsPHP/consultaEstadoArticulo.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
-		</div>               
+		  
+        <div class="col-md-4">
+	      <form class="form-horizontal"> <!--action="../logica/ScriptsPHP/requestEstadoArticulo.php">-->
+	
+	        <fieldset>
+	
+	        <!-- Form Name -->
+	        <legend>Ingresar un nuevo Estado Articulo</legend>
+	
+	        <!-- Text input-->
+	        <div class="control-group">
+	          <label class="control-label" for="estado">Nombre </label>
+	            <div class="controls">
+	              <input id="estado" name="estado" type="text" placeholder="Nombre Estado Articulo" class="input-xlarge" required="">
+	            </div>
+	        </div>
+        
+	        <!-- checkBox -->
+	        <div class="checkbox">    
+	              <label for="checkboxes-0">      
+	                <input name="activo" id="activo" type="checkbox" value="1">Activo
+	              </label>	
+	        </div>
+	        
+	        <!-- Button -->
+	        <div class="control-group">
+	          <label class="control-label" for="botonGuardarEstadoArticulo"></label>
+	          <div class="controls">
+	            <input type = "submit" id="botonGuardarEstadoArticulo" name="botonGuardarEstadoArticulo" class="btn btn-primary" value="Guardar">
+	          </div>
+	        </div>
+	        </fieldset>
+        </form> 
+	  </div>
+	</div>
+
     </div>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-       <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+	
     </body>
 </html>

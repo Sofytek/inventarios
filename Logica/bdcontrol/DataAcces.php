@@ -67,7 +67,7 @@ Class DataAccess {
 		$result = pg_query($dbconexion, $query); // or die("FAllo");
 
 		if (!$result) {
-			throw new Exception("Error en la consulta :)");
+			throw new Exception("Error en la consulta :) ".$query);
 			return;
 		}
 		return TRUE;
