@@ -2,10 +2,10 @@
 /**
  * 
  */
-class NameRoles {
+class RolNames {
 
-	private static final $ROL_EMPRESA = "Empresa";
-	private static final $ROL_USUAIROS = "Usuarios";
+	private static $ROL_EMPRESA = "Empresa";
+	private static $ROL_USUAIROS = "Usuarios";
 
 	public static function getName($idRol)
 	{
