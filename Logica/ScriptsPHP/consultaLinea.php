@@ -52,9 +52,15 @@ require_once ('../Controler/HClinea.php');
     <!-- menu superior -->
      <div class="container" style="padding-top: 1em;">
   		 <ul class="nav nav-tabs nav-justified">
-    		 <li><a href="#">Inicio</a></li>
-		     <li><a href="formularioLinea.html">Agregar Linea</a></li>
-		     <li><a href="#">Salir</a></li>
+    		 <li><a href="main.html">Inicio</a></li>
+		     <li><a href="Empresa.html">Empresa</a></li>
+         	 <li><a href="Dependencia.html">Dependencia</a></li>
+         	 <li><a href="Seccion.html">Seccion</a></li>
+         	 <li><a href="Linea.html">Linea</a></li>
+         	 <li><a href="Marca.html">Marca</a></li>
+         	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
+		     <li><a href="Usuario.html">Usuario</a></li>
+		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
     <p>
