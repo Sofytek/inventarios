@@ -1,5 +1,7 @@
 <?php
+
 require 'ControlLinea.php';
+
 class HClinea extends ControlLinea{
 
 	public function __construct($session){

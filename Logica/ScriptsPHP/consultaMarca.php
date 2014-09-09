@@ -1,8 +1,9 @@
 <?php
-require_once ('../Controler/HClinea.php');
-    session_start();
+    require_once ('../Controler/HCMarca.php');
+	
+	session_start();
   
-  	$control = new HClinea($_SESSION);
+  	$control = new HCmarca($_SESSION);
   	$control ->cargarLinea(null);
   	$result = $control->obtenerConsulta();
 	
@@ -32,8 +33,8 @@ require_once ('../Controler/HClinea.php');
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
-    <body>
     
+    <body>
     <div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -52,9 +53,13 @@ require_once ('../Controler/HClinea.php');
     <!-- menu superior -->
      <div class="container" style="padding-top: 1em;">
   		 <ul class="nav nav-tabs nav-justified">
-    		 <li><a href="#">Inicio</a></li>
-		     <li><a href="formularioLinea.html">Agregar Linea</a></li>
-		     <li><a href="#">Salir</a></li>
+    		 <li><a href="main.html">Inicio</a></li>
+		     <li><a href="Empresa.html">Empresa</a></li>
+         	 <li><a href="Dependencia.html">Dependencia</a></li>
+         	 <li><a href="Linea.html">Linea</a></li>
+           <li class="active"><a href="Marca.html">Marca</a></li>
+		     <li><a href="Usuario.html">Usuario</a></li>
+		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
     <p>
@@ -62,8 +67,8 @@ require_once ('../Controler/HClinea.php');
 		<div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioLinea.html">Registrar</a></li>
-		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaLinea.php">Reportar</a></li>
+					<li><a href="formularioMarca.html">Registrar</a></li>
+		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaMarca.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
@@ -73,7 +78,7 @@ require_once ('../Controler/HClinea.php');
 			  			<thead>
 			    			<tr>
 			      				<th>ID</th>
-			      				<th>Nombre Linea</th>
+			      				<th>Nombre Marca</th>
 			      				<th>Activo</th>
 			    			</tr>
 			  			</thead>
@@ -82,11 +87,11 @@ require_once ('../Controler/HClinea.php');
 			      			for ($index = 0; $index < $count; $index++) { 
 								$row = $result[$index]; ?>
 						<tr>	
-							<td><?php echo $row['idlinea'];?></td>
+							<td><?php echo $row['idmarca'];?></td>
 						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo $row['activo'];?></td>
+						  	<td><?php echo $row['activo'];?></td>>
 						</tr>
-					<?php 	} ?> 
+					<?php } ?> 
 			       </table>     
 			     </div>		
       		</div>

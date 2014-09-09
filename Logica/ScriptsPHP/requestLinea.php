@@ -3,17 +3,23 @@ require_once ('../Controler/HClinea.php');
 
   session_start();
   $arrlinea = ($_POST['Json']);
-  echo $arrlinea['nombre'];
   $control = new HClinea($_SESSION);
   
-  if($arrlinea != null){
+  if($arrlinea != null)
+  {
     $control->cargarLinea($arrlinea);
-    try{
+    try
+    {
       $control->crearLinea();
-    }catch(Exception $e){
+      echo TRUE;
+    }
+    catch(Exception $e)
+    {
       echo $e->getMessage();
     }
-  }else{
+  }
+  else
+  {
     //creacion de mensaje de respuesta (P)  
     echo("Ingrese el nombre de la Linea");
   }

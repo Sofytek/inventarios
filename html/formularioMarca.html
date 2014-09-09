@@ -23,12 +23,12 @@
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/vendor/jquery-1.11.1.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
-		    <script src="js/main.js"></script>
+		<script src="js/main.js"></script>
 
         
     </head>
     <body>
-    <script type="text/javascript" src="js/DataSender/DataSenderLinea.js"></script>
+    <script type="text/javascript" src="js/DataSender/DataSenderMarca.js"></script>
     <div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -50,9 +50,8 @@
     		 <li><a href="main.html">Inicio</a></li>
 		     <li><a href="Empresa.html">Empresa</a></li>
          	 <li><a href="Dependencia.html">Dependencia</a></li>
-         	 <li><a href="Seccion.html">Seccion</a></li>
-         	 <li class="active"><a href="Linea.html">Linea</a></li>
-           <li><a href="Marca.html">Marca</a></li>
+         	 <li><a href="Linea.html">Linea</a></li>
+         	 <li class="active"><a href="Marca.html">Marca</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
@@ -63,8 +62,8 @@
       <div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioLinea.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultaLinea.php">Reportar</a></li>
+					<li><a href="formularioMarca.html">Registrar</a></li>
+		     		<li><a href="../Logica/ScriptsPHP/consultaMarca.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
@@ -75,13 +74,13 @@
 	        <fieldset>
 	
 	        <!-- Form Name -->
-	        <legend>Ingresar una nueva Linea</legend>
+	        <legend>Ingresar una nueva Marca</legend>
 	
 	        <!-- Text input-->
 	        <div class="control-group">
-	          <label class="control-label" for="nombreLinea">Nombre </label>
+	          <label class="control-label" for="nombreDependencia">Nombre </label>
 	            <div class="controls">
-	              <input id="linea" name="linea" type="text" placeholder="Nombre Linea" class="input-xlarge" required="">
+	              <input id="marca" name="marca" type="text" placeholder="Nombre Marca" class="input-xlarge" required="">
 	            </div>
 	        </div>
         
@@ -94,9 +93,9 @@
 	
 	        <!-- Button -->
 	        <div class="control-group">
-	          <label class="control-label" for="botonGuardarLinea"></label>
+	          <label class="control-label" for="botonGuardarMarca"></label>
 	          <div class="controls">
-	            <input type = "submit" id="botonGuardarLinea" name="botonGuardarLinea" class="btn btn-primary" value="Guardar">
+	            <input type = "submit" id="botonGuardarMarca" name="botonGuardarMarca" class="btn btn-primary" value="Guardar">
 	          </div>
 	        </div>
 	        </fieldset>
@@ -104,6 +103,6 @@
 	  </div>
 	</div>
 
-    </div> 
+    </div>    
     </body>
 </html>

@@ -5,16 +5,19 @@ require_once '../Model/Linea.php';
 abstract class ControlLinea extends SystemControl
 {
 	private $linea;
-	public function __construct($session){
+	public function __construct($session)
+	{
 		parent::__construct($session);
 		$this->linea = null;
 	}
 
-	public function __destruct(){
+	public function __destruct()
+	{
         parent::__destruct();
     }
 
-	public function setLinea($arrlinea){
+	public function setLinea($arrlinea)
+	{
 		$this->linea = new Linea($arrlinea);		
 	}
 
@@ -23,7 +26,8 @@ abstract class ControlLinea extends SystemControl
 	 *poder ser creada, actualizada o eliminada.
 	 */
 	//crea una linea
-	final public function crearLinea(){
+	final public function crearLinea()
+	{
 		if($this->linea == null){
 			throw new Exception('Linea sin datos');
 		}
@@ -49,7 +53,7 @@ abstract class ControlLinea extends SystemControl
 	
 	final protected function consultarLinea()
 	{
-		return DataAccess::selectWhere($this->linea);
+		return DataAccess::selectWhere($this->linea, " ");
 	}
 }
 ?>
