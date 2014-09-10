@@ -19,5 +19,6 @@ class HCempresa extends ControlEmpresa{
 	{
 		return $result = parent::consultarEmpresas();
 	}
+ 
 }
 ?>

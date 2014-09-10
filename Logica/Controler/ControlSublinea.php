@@ -1,6 +1,7 @@
 <?php
     require_once 'SystemControl.php';
-require_once '../Model/Sublinea.php';
+    require_once '../Model/Linea.php';
+    require_once '../Model/Sublinea.php';
 
 abstract class ControlSublinea extends SystemControl
 {
@@ -52,5 +53,22 @@ abstract class ControlSublinea extends SystemControl
 	{
 		return DataAccess::selectWhere($this->sublinea, " ");
 	}
+    
+    final protected function getLineas($allData = false) {
+        $linea = new Linea();
+        $lineas = DataAccess::selectWhere($linea);
+        
+        if($allData)
+        {
+            return $lineas;
+        }
+        
+        $count = count($lineas);
+        for ($index = 0; $index < $count; $index++) {
+            //array asociativo idempresa-nombre
+            $id_Linea[$lineas[$index]['idlinea']] = $lineas[$index]['nombre'];
+        }
+        return $id_Linea;
+    }
 }
 ?>

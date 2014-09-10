@@ -6,7 +6,8 @@
   	$control = new HCDependencia($_SESSION);
   	$control ->cargarDependencia(null);
   	$result = $control->obtenerConsulta();
-	
+	$empresa = $control->getEmpresas();
+
 ?>
 
 <!DOCTYPE html>
@@ -87,14 +88,15 @@
 			    			</tr>
 			  			</thead>
 			  		<tbody>
-			      	<?php	$count = count($result); 
+			      	<?php	
+			      	        $count = count($result); 
 			      			for ($index = 0; $index < $count; $index++) { 
 								$row = $result[$index]; ?>
 						<tr>	
 							<td><?php echo $row['iddependencia'];?></td>
 						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo $row['activo'];?></td>
-						  	<td><?php echo $row['idempresa'];?></td>
+						  	<td><?php echo ($row['activo'])?"activo":"inactivo";?></td>
+						  	<td><?php echo $empresa[$row['idempresa']];?></td>
 						</tr>
 					<?php } ?> 
 			       </table>     

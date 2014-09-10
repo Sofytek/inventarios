@@ -93,7 +93,7 @@
             <tr>  
               <td><?php echo $row['idmarca'];?></td>
               <td><?php echo $row['nombre'];?></td>
-              <td><?php echo $row['activo'];?></td>
+              <td><?php echo ($row['activo'])?"activo":"inactivo";?></td>
             </tr>
              <?php  } ?> 
           </table>     

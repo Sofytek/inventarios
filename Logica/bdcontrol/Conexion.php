@@ -21,7 +21,7 @@ class Conexion
 		$dbuser = "postgres";
 		$password = "root"; //$dbuser = "postgres";
 		$this->conexion = pg_connect("host=$host port=$port dbname=$dbname user=$dbuser password=$password")
-			or die ('estamierda no conecta');
+			or die ('sin conexion!!');
 
 		if(!$this->conexion)
 		{

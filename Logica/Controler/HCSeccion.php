@@ -15,6 +15,11 @@ class HCSeccion extends ControlSeccion{
 	{
 		return $result = parent::consultarSecciones();
 	}
+    
+    public function getDependencias($allData = false)
+    {
+        return parent::getDependencias($allData);
+    }
 
 }
 ?>

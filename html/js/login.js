@@ -60,7 +60,8 @@ function resul (argument) {
   	}
   	else
   	{
-  		setTimeout("(redireccionar("+argument+")", 2000);	
+  		$('#debug').append("Warnig:<br>"+argument);
+  		//setTimeout("(redireccionar("+argument+")", 2000);	
   	} 
 }
 
@@ -72,7 +73,7 @@ function redireccionar(argument)
 	}
 	else
 	{
-		location.href = "index.html";		
+		//location.href = "index.html";		
 	}
 	
 }

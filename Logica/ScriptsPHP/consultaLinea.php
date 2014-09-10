@@ -91,7 +91,7 @@ require_once ('../Controler/HClinea.php');
 						<tr>	
 							<td><?php echo $row['idlinea'];?></td>
 						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo $row['activo'];?></td>
+						  	<td><?php echo ($row['activo'])?"activo":"inactivo";?></td>
 						</tr>
 					<?php 	} ?> 
 			       </table>     

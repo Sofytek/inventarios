@@ -6,7 +6,7 @@
   	$control = new HCSeccion($_SESSION);
   	$control ->cargarSeccion(null);
   	$result = $control->obtenerConsulta();
-	
+    $dependencia = 	$control->getDependencias();
 ?>
 
 <!DOCTYPE html>
@@ -97,8 +97,8 @@
 						<tr>	
 							<td><?php echo $row['idseccion'];?></td>
 						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo $row['activo'];?></td>
-						  	<td><?php echo $row['iddependencia'];?></td>
+						  	<td><?php echo ($row['activo'])?"activo":"inactivo";?></td>
+						  	<td><?php echo $dependencia[$row['iddependencia']];?></td>
 						  	<td><?php echo $row['direccion'];?></td>
 						  	<td><?php echo $row['telefono'];?></td>
 						  	<td><?php echo $row['bodega'];?></td>

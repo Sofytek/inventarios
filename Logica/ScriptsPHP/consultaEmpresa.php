@@ -91,7 +91,7 @@ require_once ('../Controler/HCempresa.php');
 						<tr>	
 							<td><?php echo $row['idempresa'];?></td>
 						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo $row['activo'];?></td>
+						  	<td><?php echo ($row['activo'])?"activo":"inactivo";?></td>
 						</tr>
 					<?php 	} ?> 
 			       </table>     
