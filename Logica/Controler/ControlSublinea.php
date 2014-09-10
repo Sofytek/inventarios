@@ -5,13 +5,19 @@ require_once '../Model/Sublinea.php';
 abstract class ControlSublinea extends SystemControl
 {
 	private $sublinea;
+
 	public function __construct($session){
 		parent::__construct($session);
 		$this->sublinea = null;
 	}
 
+	public function __destruct()
+	{
+        parent::__destruct();
+    }
+
 	public function setSublinea($arrsublinea){
-		$this->sublinea = new Seccion($arrsublinea);		
+		$this->sublinea = new Sublinea($arrsublinea);		
 	}
 
 	/*
