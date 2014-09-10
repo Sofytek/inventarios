@@ -1,10 +1,10 @@
 <?php
-    require_once ('../Controler/HCMarca.php');
+    require_once ('../Controler/HCmarca.php');
 	
 	session_start();
   
   	$control = new HCmarca($_SESSION);
-  	$control ->cargarLinea(null);
+  	$control ->cargarMarca(null);
   	$result = $control->obtenerConsulta();
 	
 ?>
@@ -58,6 +58,7 @@
          	 <li><a href="Dependencia.html">Dependencia</a></li>
          	 <li><a href="Seccion.html">Seccion</a></li>
          	 <li><a href="Linea.html">Linea</a></li>
+           <li><a href="Sublinea.html">Sublinea</a></li>
          	 <li><a href="Marca.html">Marca</a></li>
          	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
@@ -74,30 +75,31 @@
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
-      		<div class="col-md-10">
-				<div class="container" style="padding-top: 1em;">
-			  		<table class="table table-hover">
-			  			<thead>
-			    			<tr>
-			      				<th>ID</th>
-			      				<th>Nombre Marca</th>
-			      				<th>Activo</th>
-			    			</tr>
-			  			</thead>
-			  		<tbody>
-			      	<?php	$count = count($result); 
-			      			for ($index = 0; $index < $count; $index++) { 
-								$row = $result[$index]; ?>
-						<tr>	
-							<td><?php echo $row['idmarca'];?></td>
-						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo $row['activo'];?></td>>
-						</tr>
-					<?php } ?> 
-			       </table>     
-			     </div>		
-      		</div>
-		</div>               
+      
+      <div class="col-md-10">
+      <div class="container" style="padding-top: 1em;">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre Marca</th>
+                <th>Activo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $count = count($result); 
+                  for ($index = 0; $index < $count; $index++) { 
+                $row = $result[$index]; ?>
+            <tr>  
+              <td><?php echo $row['idmarca'];?></td>
+              <td><?php echo $row['nombre'];?></td>
+              <td><?php echo $row['activo'];?></td>
+            </tr>
+             <?php  } ?> 
+          </table>     
+      </div>    
+    </div>
+  </div>               
     </div>
     </body> 
 </html>

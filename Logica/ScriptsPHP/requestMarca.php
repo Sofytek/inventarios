@@ -3,7 +3,7 @@ require_once ('../Controler/HCmarca.php');
 
     session_start();
     $arrmarca = ($_POST['Json']);
-    $control = new HCDependencia($_SESSION);
+    $control = new HCmarca($_SESSION);
   
   if($arrmarca != null)
   {

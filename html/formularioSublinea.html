@@ -28,7 +28,7 @@
         
     </head>
     <body>
-    <script type="text/javascript" src="js/DataSender/DataSenderMarca.js"></script>
+    <script type="text/javascript" src="js/DataSender/DataSenderSublinea.js"></script>
     <div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -52,8 +52,8 @@
          	 <li><a href="Dependencia.html">Dependencia</a></li>
          	 <li><a href="Seccion.html">Seccion</a></li>
          	 <li><a href="Linea.html">Linea</a></li>
-           <li><a href="Sublinea.html">Sublinea</a></li>
-         	 <li class="active"><a href="Marca.html">Marca</a></li>
+         	 <li class="active"><a href="Sublinea.html">Sublinea</a></li>
+         	 <li><a href="Marca.html">Marca</a></li>
          	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
@@ -65,25 +65,25 @@
       <div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioMarca.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultaMarca.php">Reportar</a></li>
+					<li><a href="formularioSublinea.html">Registrar</a></li>
+		     		<li><a href="../Logica/ScriptsPHP/consultaSublinea.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
 		  
         <div class="col-md-4">
-	      <form class="form-horizontal"> 
+	      <form class="form-horizontal"> <!--action="../logica/ScriptsPHP/requestSeccion.php">-->
 	
 	        <fieldset>
 	
 	        <!-- Form Name -->
-	        <legend>Ingresar una nueva Marca</legend>
+	        <legend>Ingresar una nueva Sublinea</legend>
 	
 	        <!-- Text input-->
 	        <div class="control-group">
-	          <label class="control-label" for="nombreDependencia">Nombre </label>
+	          <label class="control-label" for="nombreSublinea">Nombre </label>
 	            <div class="controls">
-	              <input id="marca" name="marca" type="text" placeholder="Nombre Marca" class="input-xlarge" required="">
+	              <input id="sublinea" name="sublinea" type="text" placeholder="Nombre Sublinea" class="input-xlarge" required="">
 	            </div>
 	        </div>
         
@@ -93,12 +93,30 @@
 	                <input name="activo" id="activo" type="checkbox" value="1">Activo
 	              </label>	
 	        </div>
-	
+	        
+	        <!-- Lineas -->
+	        <div class="row">
+	        <div class="control-group">
+	        	<div class="col-xs-6">	
+	          		<label class="control-label" for="idlinea">Lineas</label>
+	            		<div class="controls">
+			        		<select class="form-control" id = "idlinea" class="input-xlarge">
+					  			<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+				</div>
+				</div>
+	        </div>
+	             
 	        <!-- Button -->
 	        <div class="control-group">
-	          <label class="control-label" for="botonGuardarMarca"></label>
+	          <label class="control-label" for="botonGuardarSublinea"></label>
 	          <div class="controls">
-	            <input type = "submit" id="botonGuardarMarca" name="botonGuardarMarca" class="btn btn-primary" value="Guardar">
+	            <input type = "submit" id="botonGuardarSublinea" name="botonGuardarSublinea" class="btn btn-primary" value="Guardar">
 	          </div>
 	        </div>
 	        </fieldset>
@@ -106,6 +124,7 @@
 	  </div>
 	</div>
 
-    </div>    
+    </div>
+	
     </body>
 </html>

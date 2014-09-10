@@ -48,7 +48,7 @@ abstract class ControlLinea extends SystemControl
 		if($this->linea != null){
 			throw new Exception('Linea sin datos');
 		}
-		DataAccess::delete($this->Linea);	
+		DataAccess::delete($this->linea);	
 	}
 	
 	final protected function consultarLinea()

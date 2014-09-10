@@ -42,7 +42,7 @@ class Marca implements IDataAccess{
 
 	//implementacion de los metodos de IDataAcces
 	public function getTitle(){
-		return "marca";
+		return "marcas";
 	}
 
 	public function getData()

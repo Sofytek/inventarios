@@ -1,3 +1,14 @@
+<?php
+    require_once ('../Controler/HCsublinea.php');
+	
+	session_start();
+  
+  	$control = new HCsublinea($_SESSION);
+  	$control ->cargarSublinea(null);
+  	$result = $control->obtenerConsulta();
+	
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -21,14 +32,9 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/vendor/jquery-1.11.1.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-		<script src="js/main.js"></script>
-
-        
     </head>
+    
     <body>
-    <script type="text/javascript" src="js/DataSender/DataSenderMarca.js"></script>
     <div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -53,59 +59,48 @@
          	 <li><a href="Seccion.html">Seccion</a></li>
          	 <li><a href="Linea.html">Linea</a></li>
            <li><a href="Sublinea.html">Sublinea</a></li>
-         	 <li class="active"><a href="Marca.html">Marca</a></li>
+         	 <li><a href="Marca.html">Marca</a></li>
          	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
-    
     <p>
     <div class="container">
-      <div class="row">
+		<div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioMarca.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultaMarca.php">Reportar</a></li>
+					<li><a href="formularioSublinea.html">Registrar</a></li>
+		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaSublinea.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
-		  
-        <div class="col-md-4">
-	      <form class="form-horizontal"> 
-	
-	        <fieldset>
-	
-	        <!-- Form Name -->
-	        <legend>Ingresar una nueva Marca</legend>
-	
-	        <!-- Text input-->
-	        <div class="control-group">
-	          <label class="control-label" for="nombreDependencia">Nombre </label>
-	            <div class="controls">
-	              <input id="marca" name="marca" type="text" placeholder="Nombre Marca" class="input-xlarge" required="">
-	            </div>
-	        </div>
-        
-	        <!-- checkBox -->
-	        <div class="checkbox">    
-	              <label for="checkboxes-0">      
-	                <input name="activo" id="activo" type="checkbox" value="1">Activo
-	              </label>	
-	        </div>
-	
-	        <!-- Button -->
-	        <div class="control-group">
-	          <label class="control-label" for="botonGuardarMarca"></label>
-	          <div class="controls">
-	            <input type = "submit" id="botonGuardarMarca" name="botonGuardarMarca" class="btn btn-primary" value="Guardar">
-	          </div>
-	        </div>
-	        </fieldset>
-        </form> 
-	  </div>
-	</div>
-
-    </div>    
-    </body>
+      		<div class="col-md-10">
+				<div class="container" style="padding-top: 1em;">
+			  		<table class="table table-hover">
+			  			<thead>
+			    			<tr>
+			      				<th>ID</th>
+			      				<th>Nombre Sublinea</th>
+			      				<th>Activo</th>
+			      				<th>Linea</th>
+			    			</tr>
+			  			</thead>
+			  		<tbody>
+			      	<?php	$count = count($result); 
+			      			for ($index = 0; $index < $count; $index++) { 
+								$row = $result[$index]; ?>
+						<tr>	
+							<td><?php echo $row['idslinea'];?></td>
+						  	<td><?php echo $row['nombre'];?></td>
+						  	<td><?php echo $row['activo'];?></td>
+						  	<td><?php echo $row['idlinea'];?></td>
+						</tr>
+					<?php } ?> 
+			       </table>     
+			     </div>		
+      		</div>
+		</div>               
+    </div>
+    </body> 
 </html>
