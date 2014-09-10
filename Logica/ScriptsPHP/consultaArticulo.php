@@ -1,10 +1,10 @@
 <?php
-    require_once ('../Controler/HCEstadoArticulo.php');
+    require_once ('../Controler/HCarticulo.php');
 	
 	session_start();
   
-  	$control = new HCEstadoArticulo($_SESSION);
-  	$control ->cargarEstadoArticulo(null);
+  	$control = new HCarticulo($_SESSION);
+  	$control ->cargarArticulo(null);
   	$result = $control->obtenerConsulta();
 	
 ?>
@@ -55,13 +55,13 @@
   		 <ul class="nav nav-tabs nav-justified">
     		 <li><a href="main.html">Inicio</a></li>
 		     <li><a href="Empresa.html">Empresa</a></li>
-       	 <li><a href="Dependencia.html">Dependencia</a></li>
-       	 <li><a href="Seccion.html">Seccion</a></li>
-       	 <li><a href="Linea.html">Linea</a></li>
-         <li><a href="Sublinea.html">Sublinea</a></li>
-       	 <li><a href="Marca.html">Marca</a></li>
-       	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
-         <li><a href="Articulo.html">Articulo</a></li>
+         	 <li><a href="Dependencia.html">Dependencia</a></li>
+         	 <li><a href="Seccion.html">Seccion</a></li>
+         	 <li><a href="Linea.html">Linea</a></li>
+           <li><a href="Sublinea.html">Sublinea</a></li>
+         	 <li><a href="Marca.html">Marca</a></li>
+         	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
+           <li><a href="Articulo.html">Articulo</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
@@ -71,8 +71,8 @@
 		<div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioEstadoArticulo.html">Registrar</a></li>
-		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaEstadoArticulo.php">Reportar</a></li>
+					<li><a href="formularioArticulo.html">Registrar</a></li>
+		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaArticulo.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
@@ -82,8 +82,25 @@
 			  			<thead>
 			    			<tr>
 			      				<th>ID</th>
-			      				<th>Nombre Estado Articulo</th>
+			      				<th>Nombre Articulo</th>
+			      				<th>Tipo</th>
+			      				<th>Referencia</th>
+			      				<th>Unidad</th>
 			      				<th>Activo</th>
+			      				<th>Marca</th>
+			      				<th>Seccion</th>
+                    <th>Sublinea</th>
+                    <th>ID Envio</th>
+                    <th>Activo Fijo</th>
+                    <th>Capitalizado</th>
+                    <th>Amortización Acumulada</th>
+                    <th>Valor Contable</th>
+                    <th>Número de Serie</th>
+                    <th>Plaqueta</th>
+                    <th>Plaqueta Anterior 1</th>
+                    <th>Plaqueta Anterior 2</th>
+                    <th>Supranumero</th>
+                    <th>Responsable</th>
 			    			</tr>
 			  			</thead>
 			  		<tbody>
@@ -91,9 +108,26 @@
 			      			for ($index = 0; $index < $count; $index++) { 
 								$row = $result[$index]; ?>
 						<tr>	
-							<td><?php echo $row['id_estado'];?></td>
-						  	<td><?php echo $row['nombre'];?></td>
-						  	<td><?php echo ($row['activo'])?"activo":"inactivo";?></td>
+							<td><?php echo $row['idarticulo'];?></td>
+					  	<td><?php echo $row['nombre'];?></td>
+					  	<td><?php echo $row['tipo'];?></td>
+					  	<td><?php echo $row['referencia'];?></td>
+					  	<td><?php echo $row['unidad'];?></td>
+					  	<td><?php echo $row['activo'];?></td>
+					  	<td><?php echo $row['idmarca'];?></td>
+					  	<td><?php echo $row['idseccion'];?></td>
+              <td><?php echo $row['idslinea'];?></td>
+              <td><?php echo $row['id_envio'];?></td>
+              <td><?php echo $row['activo_fijo_af'];?></td>
+              <td><?php echo $row['capitalizado_el_af'];?></td>
+              <td><?php echo $row['amor_acum_af'];?></td>
+              <td><?php echo $row['val_cont_af'];?></td>
+              <td><?php echo $row['numero_serie_af'];?></td>
+              <td><?php echo $row['plaqueta_af'];?></td>
+              <td><?php echo $row['plaqueta_anterior1_af'];?></td>
+              <td><?php echo $row['plaqueta_anterior2_af'];?></td>
+              <td><?php echo $row['supranumero_af'];?></td>
+              <td><?php echo $row['cc_responsable_af'];?></td>
 						</tr>
 					<?php } ?> 
 			       </table>     
