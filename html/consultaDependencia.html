@@ -1,13 +1,3 @@
-<?php
-require_once ('../Controler/HCusuario.php');
-    session_start();
-  
-  	$control = new HCusuario($_SESSION);
-  	$control ->cargarUsuario(null);
-  	$result = $control->obtenerConsulta();
-	
-?>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -29,11 +19,14 @@ require_once ('../Controler/HCusuario.php');
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/jquery-1.11.1.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-    
+    <script src="js/dataReport/dependenciaReporter.js"></script>
     <div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -52,17 +45,17 @@ require_once ('../Controler/HCusuario.php');
     <!-- menu superior -->
      <div class="container" style="padding-top: 1em;">
   		 <ul class="nav nav-tabs nav-justified">
-    		<li><a href="../../html/main.html">Inicio</a></li>
-		    <li><a href="../../html/Empresa.html">Empresa</a></li>
-       	 	<li><a href="../../html/Dependencia.html">Dependencia</a></li>
-       	 	<li><a href="../../html/Seccion.html">Seccion</a></li>
-       	 	<li><a href="../../html/Linea.html">Linea</a></li>
-         	<li><a href="../../html/Sublinea.html">Sublinea</a></li>
-       	 	<li><a href="../../html/Marca.html">Marca</a></li>
-       	 	<li><a href="../../html/EstadoArticulo.html">Estado Articulo</a></li>
-		 	<li><a href="../../html/Articulo.html">Articulo</a></li>
-         	<li><a href="../../html/Usuario.html">Usuario</a></li>
-		 	<li><a href="../../index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
+    		 <li><a href="main.html">Inicio</a></li>
+		     <li><a href="Empresa.html">Empresa</a></li>
+         	 <li class = "active"><a href="Dependencia.html">Dependencia</a></li>
+         	 <li><a href="Seccion.html">Seccion</a></li>
+         	 <li><a href="Linea.html">Linea</a></li>
+           <li><a href="Sublinea.html">Sublinea</a></li>
+         	 <li><a href="Marca.html">Marca</a></li>
+         	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
+           <li><a href="Articulo.html">Articulo</a></li>
+		     <li><a href="Usuario.html">Usuario</a></li>
+		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
     <p>
@@ -70,53 +63,19 @@ require_once ('../Controler/HCusuario.php');
 		<div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioEmpresa.html">Registrar</a></li>
-		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaEmpresa.php">Reportar</a></li>
+					<li><a href="formularioDependencia.html">Registrar</a></li>
+		     		<li><a href="../Logica/ScriptsPHP/consultaDependencia.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
-      		</div>
-      		<div class="col-md-10">
-				<div class="container" style="padding-top: 1em;">
-			  		<div class="table-responsive">
-			  		<table class="table table-hover">
-			  			<thead>
-			    			<tr>
-			      				<th>ID</th>
-			      				<th>Nombres</th>
-			      				<th>Apellidos</th>
-			      				<th>Cedula</th>
-			      				<th>Direccion</th>
-			      				<th>Ciudad</th>
-			      				<th>Telefono</th>
-			      				<th>Correo</th>
-			      				<th>Usuario</th>
-			      				<th>Seccion</th>
-			    			</tr>
-			  			</thead>
-			  		<tbody>
-			      	<?php	$count = count($result); 
-			      			for ($index = 0; $index < $count; $index++) { 
-								$row = $result[$index]; ?>
-						<tr>	
-							<td><?php echo $row['idusuario'];?></td>
-						  	<td><?php echo $row['nombres'];?></td>
-						  	<td><?php echo $row['apellidos'];?></td>
-						  	<td><?php echo $row['cc'];?></td>
-						  	<td><?php echo $row['direccion'];?></td>
-						  	<td><?php echo $row['ciudad'];?></td>
-						  	<td><?php echo $row['telefono'];?></td>
-						  	<td><?php echo $row['correo'];?></td>
-						  	<td><?php echo $row['usuario'];?></td>
-						  	<td><?php echo $row['idseccion_secciones'];?></td>
-						</tr>
-					<?php 	} ?> 
-			       </div>	
-			       </table>     
-			     </div>		
-      		</div>
+			</div>
+			<div class="col-md-10" id = "tablaDependencias">
+					<div class="container"  >
+				
+					</div>
+			</div>	
 		</div>               
     </div>
-    
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
@@ -133,5 +92,5 @@ require_once ('../Controler/HCusuario.php');
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-    </body> 
+    </body>
 </html>

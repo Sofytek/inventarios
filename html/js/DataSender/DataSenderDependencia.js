@@ -1,6 +1,7 @@
 /**
  * @author User
  */
+prepareData();
 var x;
 x=$(document);
 x.ready(events);
@@ -27,9 +28,10 @@ function pressButton()
   	a = 0;
   }
 
-  var JSON = $.parseJSON('{"iddependencia":0, "nombre":"'+d+'", "activo":'+a+', "idempresa":'+e+'}'); 
+  var JSON = $.parseJSON('{"iddependencia":0, "nombre":"'+d+'", "activo":'+a+', "idempresa":'+e+'}');
+  var nproceso = 1; 
   
-  $.post("../logica/ScriptsPHP/requestDependencia.php",{Json:JSON}, dataR); 
+  $.post("../logica/ScriptsPHP/requestDependencia.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -51,4 +53,25 @@ function dataR(bandera)
 function redireccionar()
 {
 	location.href = "main.html";	
+}
+
+function prepareData()
+{
+	var nproceso = 3;
+	$.post("../logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso}, responsePrepareData);	
+	return false;
+}
+
+function responsePrepareData(data)
+{
+	var array = new Array();
+	array = $.parseJSON(data);
+	$('#Aempresa').append('<select class="form-control" id = "empresa" class="input-xlarge">');
+	for(i = 0; i < array.length; i++)
+	{
+		if(array[i].activo == 1)
+		{
+			$('#empresa').append('<option value = '+array[i].idempresa+'>'+array[i].nombre+'</option>');	
+		}
+	}	
 }

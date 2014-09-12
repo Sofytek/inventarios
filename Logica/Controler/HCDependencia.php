@@ -17,7 +17,7 @@ class HCDependencia extends ControlDependencia{
 		return $result = parent::consultarDependencias();
 	}
     
-    final public function getEmpresas($allData = false)
+    final public function obtenerEmpresa($allData = false)
     {
         return parent::getEmpresas($allData);
     }
