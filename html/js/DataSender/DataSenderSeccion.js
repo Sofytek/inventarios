@@ -1,7 +1,7 @@
 /**
  * @author User
  */
-
+prepareData();
 var x;
 x=$(document);
 x.ready(events);
@@ -33,8 +33,9 @@ function pressButton()
   }
 
   var JSON = $.parseJSON('{"idseccion":0, "nombre":"'+seccion+'", "activo":'+activo+', "iddependencia":'+dependencia+', "direccion":"'+direccion+'", "telefono":"'+telefono+'", "bodega":"'+bodega+'", "cc_admin":'+ccAdmin+'}'); 
+  var nproceso = 1; 
   
-  $.post("../logica/ScriptsPHP/requestSeccion.php",{Json:JSON}, dataR); 
+  $.post("../logica/ScriptsPHP/requestSeccion.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -57,4 +58,25 @@ function dataR(bandera)
 function redireccionar()
 {
 	location.href = "main.html";	
+}
+
+function prepareData()
+{
+	var nproceso = 3;
+	$.post("../logica/ScriptsPHP/requestSeccion.php",{nproceso: nproceso}, responsePrepareData);	
+	return false;
+}
+
+function responsePrepareData(data)
+{
+	var array = new Array();
+	array = $.parseJSON(data);
+	$('#DDependencia').append('<select class="form-control" id = "dependencia" class="input-xlarge">');
+	for(i = 0; i < array.length; i++)
+	{
+		if(array[i].activo == 1)
+		{
+			$('#dependencia').append('<option value = '+array[i].iddependencia+'>'+array[i].nombre+'</option>');	
+		}
+	}	
 }
