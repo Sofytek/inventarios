@@ -34,7 +34,7 @@ function logon()
 {
 	var usuario = $('#usuario').val();
 	var password = $('#password').val();
-	var url = "../logica/ScriptsPHP/Rlog.php";
+	var url = "../Logica/ScriptsPHP/Rlog.php";
 	var data = 
 	
 	$.post(url, {'user':usuario, 'password':password}, resul); 

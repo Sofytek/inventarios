@@ -1,6 +1,10 @@
 <?php
     require_once 'SystemControl.php';
-require_once '../Model/Articulo.php';
+	require_once '../Model/Articulo.php';
+	require_once '../Model/Seccion.php';
+	require_once '../Model/Marca.php';
+	require_once '../Model/Sublinea.php';
+
 
 abstract class ControlArticulo extends SystemControl
 {
@@ -18,7 +22,7 @@ abstract class ControlArticulo extends SystemControl
     }
 
 	public function setArticulo($arrarticulo){
-		$this->ariculo = new Articulo($arrarticulo);		
+		$this->articulo = new Articulo($arrarticulo);		
 	}
 
 	/*
@@ -54,5 +58,55 @@ abstract class ControlArticulo extends SystemControl
 	{
 		return DataAccess::selectWhere($this->articulo, " ");
 	}
+	
+	final protected function getMarcas($allData = false) {
+        $marca = new Marca();
+        $marcas=  DataAccess::selectWhere($marca);
+        
+        if ($allData) {
+            return $marcas;
+        }
+        
+        $count = count($marcas);
+        for ($index = 0; $index < $count; $index++) {
+            //array asociativo idmarca-nombre
+            $id_Marca[$marcas[$index]['idmarca']] = $marcas[$index]['nombre'];
+        }
+        return $id_Marca;
+    }
+	
+	final protected function getSecciones($allData = false) {
+        $seccion = new Seccion();
+        $secciones =  DataAccess::selectWhere($seccion);
+        
+        if ($allData) {
+            return $secciones;
+        }
+        
+        $count = count($secciones);
+        for ($index = 0; $index < $count; $index++) {
+            //array asociativo idseccion-nombre
+            $id_Seccion[$secciones[$index]['idseccion']] = $secciones[$index]['nombre'];
+        }
+        return $id_Seccion;
+    }
+	
+	final protected function getSublineas($allData = false) {
+        $sublinea = new Sublinea();
+        $sublineas =  DataAccess::selectWhere($sublinea);
+        
+        if ($allData) {
+            return $sublineas;
+        }
+        
+        $id_Sublinea = NULL;
+        $count = count($sublineas);
+        for ($index = 0; $index < $count; $index++) {
+            //array asociativo idsublinea-nombre
+            $id_Sublinea[$sublineas[$index]['idsublinea']] = $sublineas[$index]['nombre'];
+        }
+        return $id_Sublinea;
+    }
+	
 }
 ?>
