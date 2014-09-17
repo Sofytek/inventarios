@@ -1,4 +1,4 @@
---------Comentarios generales acerca del commit 20140912 savm ---------
+--------Comentarios especificos acerca del commit 20140912 savm ---------
 
 1. 	El modulo de la entidad dependencia queda funcionando en su totalidad 
 	en los procesos de grabar y reportar con jsons.
