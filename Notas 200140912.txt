@@ -8,7 +8,7 @@
 	que formularioDependencia.html carga el datasender, estas funciones 
 	son llamadas para hacer una solicitud al servidor de las foraneas(en 
 	este caso empresa).
-	
+	AMOOOOO A CATALINAAAA ¡¡¡¡¡¡
 	Para los reportes se genero un dataReportDependencias.js el cual manda
 	la peticion al servidor de que haga una consulta de las empresas.
 
