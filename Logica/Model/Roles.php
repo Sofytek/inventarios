@@ -1,5 +1,5 @@
 <?php
-require_once ('Tools.php');
+require_once ('../Tools/Tools.php');
 require_once ('../bdcontrol/IDataAccess.php');
 
 /**
@@ -47,7 +47,7 @@ class Rol implements IDataAccess {
     }
 
     public function getData() {
-        $columName = array("id_rolusuario", "idusuario_usuarios", "id_rol_roles", "registrar", "modificar", "consultar");
+        $columName = array("id_rolusuario", "id_usuario_usr", "id_rol_roles", "registrar", "modificar", "consultar");
         $values = array($this -> idRolUsuario, $this -> idUsuario, $this -> idRol, $this -> registrar, $this -> modificar, $this -> consultar);
         return array($columName, $values);
     }
