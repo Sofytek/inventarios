@@ -1,4 +1,4 @@
-este archivo no me gusta!!!!!! B)
+este archivo no me gusta!!!!!! B) Yo lo modique!! att karen
 --------Comentarios generales acerca del commit 20140912 savm ---------
 
 1. 	El modulo de la entidad dependencia queda funcionando en su totalidad 
