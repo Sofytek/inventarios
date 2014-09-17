@@ -2,7 +2,7 @@
     require_once ('../bdcontrol/IDataAccess.php');
     require_once ('Tools.php');
 
-class Seccion implements IDataAccess{
+class Articulo implements IDataAccess{
 
 	private $idArticulo;
 	private $nombre;
@@ -202,7 +202,7 @@ class Seccion implements IDataAccess{
 	{
 		$columName = array("idarticulo", "nombre", "activo", "idseccion", "idslinea", "idmarca", "tipo", "referencia", "id_envio", "unidad", "capitalizado_el_af", "amo_acum_af", "val_cont_af", "numero_serie_af", "plaqueta_af", "plaqueta_anterior1_af", "activo_fijo_af", "supranumero_af", "plaqueta_anterior2_af", "cc_responsable_af");
 
-		$values = array($this->idArticulo, $this->nombre, $this->activo, $this->idSeccion, $this->idSublinea, $this->idMarca, $this->tipo, $this->referencia, $this->idEnvio, $this->unidad, $this->capitalizado, $this->amorAcumulada, $this->valContable, $this->numSerie, $this->plaqueta, $this->plaquetaAnt1, $this->activoFijo, $this->supranumero_af, $this->plaquetaAnt2, $this->ccResponsable);
+		$values = array($this->idArticulo, $this->nombre, $this->activo, $this->idSeccion, $this->idSublinea, $this->idMarca, $this->tipo, $this->referencia, $this->idEnvio, $this->unidad, $this->capitalizado, $this->amorAcumulada, $this->valContable, $this->numSerie, $this->plaqueta, $this->plaquetaAnt1, $this->activoFijo, $this->supranumero, $this->plaquetaAnt2, $this->ccResponsable);
     	return array($columName, $values);
 	}
 

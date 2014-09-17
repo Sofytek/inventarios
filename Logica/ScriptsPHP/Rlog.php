@@ -1,5 +1,5 @@
 <?php
-require_once ('../controler/Hlog.php');
+require_once ('../Controler/HClog.php');
 session_start();
 
 $usuario = $_REQUEST['user'];

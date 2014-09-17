@@ -28,8 +28,8 @@ abstract class ControlDependencia extends SystemControl {
     }
 
     //modifica una dependencia existente
-    final protected function modificarDependencia() {
-        if ($this -> dependencia != null) {
+    final public function modificarDependencia() {
+        if ($this -> dependencia == null) {
             throw new Exception('Dependencia sin datos');
         }
         DataAccess::update($this -> dependencia);
@@ -46,7 +46,15 @@ abstract class ControlDependencia extends SystemControl {
     final protected function consultarDependencias() {
         return DataAccess::selectWhere($this -> dependencia, " ");
     }
-
+	
+	final protected function consultarDependenciasXid($iddependencia)
+	{
+        $this->dependencia ->setIdDependencia($iddependencia);	
+    	DataAccess::read($this->dependencia);
+		
+    	return $this -> dependencia -> getData()[1];
+	}
+	
     final protected function getEmpresas($allData = false) {
         $empresa = new Empresa();
         $empresas=  DataAccess::selectWhere($empresa);
@@ -58,7 +66,7 @@ abstract class ControlDependencia extends SystemControl {
         $count = count($empresas);
         for ($index = 0; $index < $count; $index++) {
             //array asociativo idempresa-nombre
-            $id_Empresa[$empresas[$index]['idempresa']] = $empresas[$index]['nombre'];
+            $id_Empresa[$empresas[$index]['idempresa']] = $empresas[$index]['nombre']; //id_Empresa[idempresa] = nombreEmpresa
         }
         return $id_Empresa;
     }

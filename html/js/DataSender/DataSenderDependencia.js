@@ -31,7 +31,7 @@ function pressButton()
   var JSON = $.parseJSON('{"iddependencia":0, "nombre":"'+d+'", "activo":'+a+', "idempresa":'+e+'}');
   var nproceso = 1; 
   
-  $.post("../logica/ScriptsPHP/requestDependencia.php",{Json:JSON, nproceso: nproceso}, dataR); 
+  $.post("../Logica/ScriptsPHP/requestDependencia.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -58,7 +58,7 @@ function redireccionar()
 function prepareData()
 {
 	var nproceso = 3;
-	$.post("../logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso}, responsePrepareData);	
+	$.post("../Logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso}, responsePrepareData);	
 	return false;
 }
 

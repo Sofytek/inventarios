@@ -71,8 +71,8 @@ require_once ('../Controler/HCusuario.php');
 		<div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioEmpresa.html">Registrar</a></li>
-		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaEmpresa.php">Reportar</a></li>
+					<li><a href="formularioUsuario.html">Registrar</a></li>
+		     		<li class="active"><a href="../Logica/ScriptsPHP/consultaUsuario.php">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>

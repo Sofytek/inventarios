@@ -83,7 +83,7 @@ Class DataAccess {
 			throw new Exception("Nombre de tabla ó datos ó nombres de campos NULOS");
 			return;
 		}
-		$query = "SELECT * FROM " . self::$CONST_PREFIX . $table . " WHERE " . pg_escape_string($columName[0]) . "= '" . pg_escape_string($values[0]) . ";";
+		$query = "SELECT * FROM " . self::$CONST_PREFIX . $table . " WHERE " . pg_escape_string($columName[0]) . " = " . pg_escape_string($values[0]) . ";";
 
 		$result = pg_query($query);
 
@@ -91,7 +91,7 @@ Class DataAccess {
 			throw new Exception("Error en la consulta :)");
 			return;
 		}
-		elseif ($row = pg_fetch_row($result)) {
+		elseif ($row = pg_fetch_assoc($result)) {
 			$dataAccess -> setData($row);
 		}else{
 			return FALSE;
@@ -115,17 +115,18 @@ Class DataAccess {
 		$count = count($values);
 
 		for ($index = 1; $index < $count; $index++) {
-			$query .= pg_escape_string($columName[$index]) . "= '" . pg_escape_string($values[$index]) . "'";
+			$query .= pg_escape_string($columName[$index]) . " = '" . pg_escape_string($values[$index]) . "'";
 			if ($index + 1 < $count) {
 				$query .= ",";
 			} else {
-				$query .= "WHERE " . pg_escape_string($columName[0]) . "= '" . pg_escape_string($values[0]) . ";";
+				$query .= " WHERE " . pg_escape_string($columName[0]) . " = " . pg_escape_string($values[0]) . ";";
 			}
 		}
 		$result = pg_query($query);
 
 		if (!$result) {
-			throw new Exception("Error en la consulta :)");
+			//throw new Exception("Error en la consulta :)");
+			
 			return;
 		}
 		return TRUE;
@@ -153,6 +154,8 @@ Class DataAccess {
 			throw new Exception("Error en la consulta :)");
 			return;
 		}
+		
+		$dataArry = null;
 		
 		while ($row = pg_fetch_assoc($result)) {
 			$dataArry[] = $row;
