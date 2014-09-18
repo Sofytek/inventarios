@@ -18,6 +18,7 @@ abstract class SystemControl {
 		}elseif($session['Usuario'] == null || $session['logon'] != TRUE) {
 			throw new Exception("Usuario No valido");
 		}else
+        $rolesSession = $session['roles']['propiedades'];
 		$conex = new Conexion();
 		$conex->conectar();
 		DataAccess::setConexion($conex);	
@@ -60,6 +61,9 @@ abstract class SystemControl {
 	}
 
 	private function getRoles() {
+		$rolesNames = null;    
+		$rolesModulo = null;
+        
 		$rolesUsuario = new Rol();
 		$rolesUsuario -> setIdUsuario($this -> usuario -> getIdUsuario());
 		$roles = DataAccess::selectWhere($rolesUsuario, 1);
@@ -73,8 +77,9 @@ abstract class SystemControl {
 			$rolesModulo[$rolname . '_mod'] = ($row['modificar']) ? 1 : 0;
 			$rolesModulo[$rolname . '_con'] = ($row['consultar']) ? 1 : 0;
 		}
-		$rolesUsuario['nombres']  = $rolname ;
-		$rolesUsuario['propiedades']  = $rolname ;
+        $rolesUsuario=null;
+		$rolesUsuario['nombres']  = $rolesNames;
+		$rolesUsuario['propiedades']  = $rolesModulo;
 		return $rolesUsuario;
 	}
 }

@@ -23,10 +23,6 @@ function resul(argument) {
 	var obj = jQuery.parseJSON(argument);
 
 	if (obj.result) {
-
-		$.cookie('menu_', argument, {
-			expires : 1
-		});
 		location.href = 'main2.html';
 	} else {
 		$('#debug').empty();
@@ -46,8 +42,12 @@ function redireccionar(argument) {
 
 function logoff() {
 	var logoff = $_GET('logoff');
-	if ( logoff == 1) {
+	if (logoff == 1) {
 		$('#debug').append("Session cerrada correctamente.");
+	}
+	else if(logoff == 2) 
+	{	
+		$('#debug').append("Porfavor iniciar seccion.");
 	}
 }
 
