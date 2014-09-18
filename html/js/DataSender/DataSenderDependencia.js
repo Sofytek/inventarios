@@ -52,7 +52,7 @@ function dataR(bandera)
 
 function redireccionar()
 {
-	location.href = "main.html";	
+	location.href = "consultaDependencia.html";	
 }
 
 function prepareData()
