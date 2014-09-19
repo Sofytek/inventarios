@@ -15,7 +15,7 @@ class Conexion
 		 * implicito en el codigo Hacer un metodo que los lea de un archivo y
 		 * posteriormente cargue las variables de esta clase (P)
 		 */
-		$dbname = "Activos";
+		$dbname = "ActivosFijos";
 		$host = "localhost"; 
 		$port = "5432";
 		$dbuser = "postgres";

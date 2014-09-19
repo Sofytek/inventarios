@@ -15,6 +15,11 @@ class HCSeccion extends ControlSeccion{
 	{
 		return $result = parent::consultarSecciones();
 	}
+	
+	public function obtenerSeccionXid($idseccion)
+	{
+		return $result = parent::consultarSeccionesXid($idseccion);
+	}
     
     public function ObtenerDependencias($allData = false)
     {
