@@ -10,7 +10,7 @@ x.ready(events);
 function reportData()
 {
 	var nproceso = 2;
-	$.post("../logica/ScriptsPHP/requestSeccion.php",{nproceso: nproceso}, responseReportData);	
+	$.post("../Logica/ScriptsPHP/requestSeccion.php",{nproceso: nproceso}, responseReportData);	
 	return false;
 }
 
