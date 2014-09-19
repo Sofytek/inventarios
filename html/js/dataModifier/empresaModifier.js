@@ -99,6 +99,8 @@ function responseModificarEmpresa(data)
 	{
 		setTimeout ("redireccionar()", 2000);
 		alert("La empresa no ha sido modificada");
+		//document.write(data);
+
 	}
 	
 }

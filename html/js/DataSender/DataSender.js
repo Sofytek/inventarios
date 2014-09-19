@@ -43,6 +43,8 @@ function dataR(bandera)
 	{
     setTimeout ("redireccionar()", 2000);
 		alert("La empresa no ha sido agregada");
+    //document.write(bandera);
+
 	}
 	
 }
