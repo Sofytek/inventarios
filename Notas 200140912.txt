@@ -1,3 +1,4 @@
+este archivo no me gusta!!!!!! B) Yo lo modique!! att karen
 --------Comentarios generales acerca del commit 20140912 savm ---------
 
 1. 	El modulo de la entidad dependencia queda funcionando en su totalidad 
@@ -8,7 +9,7 @@
 	que formularioDependencia.html carga el datasender, estas funciones 
 	son llamadas para hacer una solicitud al servidor de las foraneas(en 
 	este caso empresa).
-	
+	AMOOOOO A CATALINAAAA ¡¡¡¡¡¡
 	Para los reportes se genero un dataReportDependencias.js el cual manda
 	la peticion al servidor de que haga una consulta de las empresas.
 

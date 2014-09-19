@@ -54,15 +54,16 @@ require_once ('../Controler/HCusuario.php');
   		 <ul class="nav nav-tabs nav-justified">
     		<li><a href="../../html/main.html">Inicio</a></li>
 		    <li><a href="../../html/Empresa.html">Empresa</a></li>
-       	 	<li><a href="../../html/Dependencia.html">Dependencia</a></li>
-       	 	<li><a href="../../html/Seccion.html">Seccion</a></li>
-       	 	<li><a href="../../html/Linea.html">Linea</a></li>
-         	<li><a href="../../html/Sublinea.html">Sublinea</a></li>
-       	 	<li><a href="../../html/Marca.html">Marca</a></li>
-       	 	<li><a href="../../html/EstadoArticulo.html">Estado Articulo</a></li>
-		 	<li><a href="../../html/Articulo.html">Articulo</a></li>
-         	<li><a href="../../html/Usuario.html">Usuario</a></li>
-		 	<li><a href="../../index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
+     	 	<li><a href="../../html/Dependencia.html">Dependencia</a></li>
+     	 	<li><a href="../../html/Seccion.html">Seccion</a></li>
+     	 	<li><a href="../../html/Linea.html">Linea</a></li>
+       	<li><a href="../../html/Sublinea.html">Sublinea</a></li>
+     	 	<li><a href="../../html/Marca.html">Marca</a></li>
+     	 	<li><a href="../../html/EstadoArticulo.html">Estado Articulo</a></li>
+	 	    <li><a href="../../html/Articulo.html">Articulo</a></li>
+        <li><a href="../../html/Solicitud.html">Solicitud</a></li>
+       	<li><a href="../../html/Usuario.html">Usuario</a></li>
+		 	  <li><a href="../../index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
     <p>

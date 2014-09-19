@@ -28,7 +28,7 @@
         
     </head>
     <body>
-    <script type="text/javascript" src="js/DataSender/DataSenderDependencia.js"></script>
+    <script type="text/javascript" src="js/DataSender/DataSenderSolicitud.js"></script>
     <div id="debug"></div>
     <div class="container">
       <!-- Logo Empresa -->
@@ -50,14 +50,14 @@
   		 <ul class="nav nav-tabs nav-justified">
     		 <li><a href="main.html">Inicio</a></li>
 		     <li><a href="Empresa.html">Empresa</a></li>
-         	 <li class="active"><a href="Dependencia.html">Dependencia</a></li>
+         	 <li><a href="Dependencia.html">Dependencia</a></li>
          	 <li><a href="Seccion.html">Seccion</a></li>
          	 <li><a href="Linea.html">Linea</a></li>
          	 <li><a href="Sublinea.html">Sublinea</a></li>
          	 <li><a href="Marca.html">Marca</a></li>
          	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
          	 <li><a href="Articulo.html">Articulo</a></li>
-         	 <li><a href="Solicitud.html">Solicitud</a></li>
+         	 <li class="active"><a href="Solicitud.html">Solicitud</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
@@ -68,9 +68,8 @@
       <div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li class = "active"><a href="formularioDependencia.html">Registrar</a></li>
-		     		<li><a href="modificarDependencia.html">Modificar</a></li>
-		     		<li><a href="consultaDependencia.html">Reportar</a></li>
+					<li><a href="formularioSolicitud.html">Registrar</a></li>
+		     		<li><a href="consultaSolicitud.html">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
@@ -81,44 +80,96 @@
 	        <fieldset>
 	
 	        <!-- Form Name -->
-	        <legend>Ingresar una nueva Dependencia</legend>
+	        <legend>Ingresar una nueva Solicitud</legend>
 	
 	        <!-- Text input-->
 	        <div class="control-group">
-	          <label class="control-label" for="nombreDependencia">Nombre </label>
+	          <label class="control-label" for="descSolicitud">Descripcion de la Solicitud</label>
 	            <div class="controls">
-	              <input id="dependencia" name="dependencia" type="text" placeholder="Nombre Dependencia" class="input-xlarge" required="">
+	              <input id="nota" name="nota" type="text" placeholder="Descripcion Solicitud" class="input-xlarge" required="">
 	            </div>
 	        </div>
-        
-	        <!-- checkBox -->
-	        <div class="checkbox">    
-	              <label for="checkboxes-0">      
-	                <input name="activo" id="activo" type="checkbox" value="1">Activo
-	              </label>	
+
+	        <!-- Text input-->
+	        <div class="control-group">
+	          <label class="control-label" for="tipo">Tipo de Solicitud</label>
+	            <div class="controls">
+	              <input id="tipo" name="tipo" type="text" placeholder="Tipo de Solicitud" class="input-xlarge" required="">
+	            </div>
+	        </div>
+
+	        <!-- Text date-->
+	        <div class="control-group">
+	          <label class="control-label" for="fecha">Fecha de la Solicitud</label>
+	            <div class="controls">
+	              <input id="fecha" name="fecha" type="date" placeholder="Fecha de la Solicitud" class="input-xlarge" required="">
+	            </div>
+	        </div>
+
+	        <!-- Text input-->
+	        <div class="control-group">
+	          <label class="control-label" for="solicitante">Solicitante</label>
+	            <div class="controls">
+	              <input id="solicitante" name="solicitante" type="text" placeholder="Nombre del Solicitante" class="input-xlarge" required="">
+	            </div>
 	        </div>
 	        
-	        <!-- Empresa -->
+	        <!-- Usuario -->
 	        <div class="row">
 	        <div class="control-group">
 	        	<div class="col-xs-6">	
-	          		<label class="control-label" for="Empresa">Empresa</label>
-	            		<div id = "Aempresa"class="controls">
-			        		<!--<select class="form-control" id = "empresa" class="input-xlarge">
-					  			<option>30</option>
-								<option>31</option>
-								<option>32</option>
-								<option>33</option>
-								<option>34</option>
-							</select>-->
+	          		<label class="control-label" for="lbusuario">Usuario</label>
+	            		<div id = "Ausuario"class="controls">
+			        		
 						</div>
 				</div>
 				</div>
 	        </div>
+
+	        <!-- dependencia -->
+	        <div class="row">
+	        <div class="control-group">
+	        	<div class="col-xs-6">	
+	          		<label class="control-label" for="lbdependencia">Dependencia</label>
+	            		<div id = "Adependencia"class="controls">
+			        		
+						</div>
+				</div>
+				</div>
+	        </div>
+
+	        <!-- seccion -->
+	        <div class="row">
+	        <div class="control-group">
+	        	<div class="col-xs-6">	
+	          		<label class="control-label" for="ldseccion">Seccion</label>
+	            		<div id = "Aseccion"class="controls">
+			        		
+						</div>
+				</div>
+				</div>
+	        </div>
+
+	        <!-- Text input-->
+	        <div class="control-group">
+	          <label class="control-label" for="notaenvio">Nota de Envio</label>
+	            <div class="controls">
+	              <input id="notaenvio" name="notaenvio" type="text" placeholder="Nota de Envio" class="input-xlarge" required="">
+	            </div>
+	        </div>
+
+	        <!-- Text date-->
+	        <div class="control-group">
+	          <label class="control-label" for="fechaenvio">Fecha de Envio</label>
+	            <div class="controls">
+	              <input id="fechaenvio" name="fechaenvio" type="date" placeholder="Fecha de Envio" class="input-xlarge" required="">
+	            </div>
+	        </div>
+	
 	
 	        <!-- Button -->
 	        <div class="control-group">
-	          <label class="control-label" for="botonGuardarDependencia"></label>
+	          <label class="control-label" for="botonGuardarSolicitud"></label>
 	          <div class="controls">
 	            <input type = "submit" id="botonGuardarDependencia" name="botonGuardarDependencia" class="btn btn-primary" value="Guardar">
 	          </div>
@@ -128,9 +179,6 @@
 	  </div>
 	</div>
 
-    </div>
-	
-    
-        
+    </div>  
     </body>
 </html>
