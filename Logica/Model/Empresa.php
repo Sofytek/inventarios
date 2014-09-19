@@ -16,12 +16,12 @@ class Empresa implements IDataAccess{
 	}
 	
 	//Setters and Getters
-	Public function setIdEmpresa($idEmpresa){
+	public function setIdEmpresa($idEmpresa){
 		$this->idEmpresa = $idEmpresa;
 	}
 
 	public function getIdEmpresa(){
-		return $idEmpresa; 
+		return $this -> idEmpresa; 
 	}
 
 	public function setNombre($nombre){
