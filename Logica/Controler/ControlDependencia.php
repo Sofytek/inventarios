@@ -54,7 +54,7 @@ abstract class ControlDependencia extends SystemControl {
 		
     	return $this -> dependencia -> getData()[1];
 	}
-	
+
     final protected function getEmpresas($allData = false) {
         $empresa = new Empresa();
         $empresas=  DataAccess::selectWhere($empresa);

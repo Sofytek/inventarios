@@ -43,7 +43,7 @@ function responseReportData(data)
 function prepareModificar(iddependencia)
 {
 	var nproceso = 4;
-	$.post("../logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso, id: iddependencia}, responseModifieData);	
+	$.post("../Logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso, id: iddependencia}, responseModifieData);	
 	return false;
 }
 

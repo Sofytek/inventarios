@@ -19,16 +19,14 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/vendor/jquery-1.11.1.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
-
-        
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-    <script type="text/javascript" src="js/DataSender/DataSenderSublinea.js"></script>
+    <script src="js/dataModifier/sublineaModifier.js"></script>
     <div class="container">
       <!-- Logo Empresa -->
       <div class="row">
@@ -52,76 +50,48 @@
          	 <li><a href="consultaDependencia.html">Dependencia</a></li>
          	 <li><a href="consultaSeccion.html">Seccion</a></li>
          	 <li><a href="Linea.html">Linea</a></li>
-         	 <li class="active"><a href="consultaSublinea.html">Sublinea</a></li>
+           <li class="active"><a href="consultaSublinea.html">Sublinea</a></li>
          	 <li><a href="Marca.html">Marca</a></li>
          	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
-         	 <li><a href="Articulo.html">Articulo</a></li>
-         	 <li><a href="Solicitud.html">Solicitud</a></li>
+           <li><a href="Articulo.html">Articulo</a></li>
 		     <li><a href="Usuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
-    
     <p>
     <div class="container">
-      <div class="row">
+		<div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="formularioSublinea.html">Registrar</a></li>
-					<li><a href="modificarSublinea.html">Modificar</a></li>
+					<li><a href="formularioSublinea.html">Registrar</a></li>
+		     		<li class = "active"><a href="modificarSublinea.html">Modificar</a></li>
 		     		<li><a href="consultaSublinea.html">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
-      		</div>
-		  
-        <div class="col-md-4">
-	      <form class="form-horizontal"> <!--action="../logica/ScriptsPHP/requestSeccion.php">-->
-	
-	        <fieldset>
-	
-	        <!-- Form Name -->
-	        <legend>Ingresar una nueva Sublinea</legend>
-	
-	        <!-- Text input-->
-	        <div class="control-group">
-	          <label class="control-label" for="nombreSublinea">Nombre </label>
-	            <div class="controls">
-	              <input id="sublinea" name="sublinea" type="text" placeholder="Nombre Sublinea" class="input-xlarge" required="">
-	            </div>
-	        </div>
-        
-	        <!-- checkBox -->
-	        <div class="checkbox">    
-	              <label for="checkboxes-0">      
-	                <input name="activo" id="activo" type="checkbox" value="1">Activo
-	              </label>	
-	        </div>
-	        
-	        <!-- Lineas -->
-	        <div class="row">
-	        <div class="control-group">
-	        	<div class="col-xs-6">	
-	          		<label class="control-label" for="Linea">Lineas</label>
-	            		<div id ="Alinea"class="controls">
-			        		
-						</div>
-				</div>
-				</div>
-	        </div>
-	             
-	        <!-- Button -->
-	        <div class="control-group">
-	          <label class="control-label" for="botonGuardarSublinea"></label>
-	          <div class="controls">
-	            <input type = "submit" id="botonGuardarSublinea" name="botonGuardarSublinea" class="btn btn-primary" value="Guardar">
-	          </div>
-	        </div>
-	        </fieldset>
-        </form> 
-	  </div>
-	</div>
-
+			</div>
+			<div class="col-md-10" id = "tablaSublineas" value = "4">
+					<div class="container"  >
+				
+					</div>
+			</div>	
+		</div>               
     </div>
-	
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+       <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
     </body>
 </html>
