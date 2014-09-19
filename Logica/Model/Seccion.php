@@ -21,12 +21,12 @@ class Seccion implements IDataAccess{
 	}
 	
 	//Setters and Getters
-	Public function setIdSeccion($idSeccion){
-		$this->$idSeccion = $idSeccion;
+	public function setIdSeccion($idSeccion){	
+		$this->idSeccion = $idSeccion;
 	}
 
 	public function getIdSeccion(){
-		return $idSeccion; 
+		return $this->idSeccion; 
 	}
 
 	public function setNombre($nombre){
