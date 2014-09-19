@@ -10,7 +10,7 @@ function reportData()
 {
 	var nproceso = 2;
 
-	$.post("../logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso}, responseReportData);	
+	$.post("../Logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso}, responseReportData);	
 	return false;
 }
 
@@ -103,7 +103,7 @@ function modificarDependencia(iddependencia)
 
   	var JSON = $.parseJSON('{"iddependencia":'+parseInt(iddependencia)+', "nombre":"'+d+'", "activo":'+a+', "idempresa":'+e+'}'); 
   
- 	$.post("../logica/ScriptsPHP/requestDependencia.php",{Json:JSON, nproceso: nproceso}, responseModificarDependencia); 
+ 	$.post("../Logica/ScriptsPHP/requestDependencia.php",{Json:JSON, nproceso: nproceso}, responseModificarDependencia); 
   	return false;
 }
 
@@ -117,7 +117,7 @@ function responseModificarDependencia(data)
 	else
 	{
 		setTimeout ("redireccionar()", 2000);
-		alert("La dependencia no ha sido agregada");
+		alert("La dependencia no ha sido modificada");
 	}
 	
 }
