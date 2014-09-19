@@ -1,7 +1,7 @@
 /**
  * @author User
  */
-
+prepareData();
 var x;
 x=$(document);
 x.ready(events);
@@ -29,8 +29,9 @@ function pressButton()
   }
 
   var JSON = $.parseJSON('{"idslinea":0, "nombre":"'+sublinea+'", "activo":'+activo+', "idlinea":'+idlinea+'}'); 
-  
-  $.post("../logica/ScriptsPHP/requestSublinea.php",{Json:JSON}, dataR); 
+  var nproceso = 1; 
+
+  $.post("../Logica/ScriptsPHP/requestSublinea.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -38,8 +39,9 @@ function dataR(bandera)
 {
   	if(bandera == 1)
 	{
-		setTimeout ("redireccionar()", 2000); 
-  		alert("La sublinea ha sido agregada");
+		  //setTimeout ("redireccionar()", 2000); 
+  		//alert("La sublinea ha sido agregada");
+      document.write(bandera);
 	}
 	else
 	{
@@ -52,5 +54,26 @@ function dataR(bandera)
 
 function redireccionar()
 {
-	location.href = "main.html";	
+	location.href = "consultaSublinea.html";	
+}
+
+function prepareData()
+{
+  var nproceso = 3;
+  $.post("../Logica/ScriptsPHP/requestSublinea.php",{nproceso: nproceso}, responsePrepareData);  
+  return false;
+}
+
+function responsePrepareData(data)
+{
+  var array = new Array();
+  array = $.parseJSON(data);
+  $('#Alinea').append('<select class="form-control" id = "linea" class="input-xlarge">');
+  for(i = 0; i < array.length; i++)
+  {
+    if(array[i].activo == 1)
+    {
+      $('#linea').append('<option value = '+array[i].idlinea+'>'+array[i].nombre+'</option>');  
+    }
+  } 
 }
