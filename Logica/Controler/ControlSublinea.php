@@ -54,7 +54,7 @@ abstract class ControlSublinea extends SystemControl
 		return DataAccess::selectWhere($this->sublinea, " ");
 	}
 
-	final protected function consultarSublineasXid($idslinea)
+	final protected function consultarSublineaXid($idslinea)
 	{
         $this->sublinea ->setIdSublinea($idslinea);	
     	DataAccess::read($this->sublinea);

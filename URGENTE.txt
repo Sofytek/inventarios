@@ -1,27 +1,18 @@
 ------------------URGENTE----------------------------------
 
-	Empresa: 
-		-tiene problemas con la bandera de registro.	
 	Linea: 
 		-Hace falta reporte en html.
 		-Hace falta el modificar. 
-	SubLinea:
-		-No guarda sublineas.
-		-No esta modificando.
 	Marca:
 		-falta reporte html
-		-fallta el modificar.	
+		-falta el modificar.	
 	EstadoArticulo:
-		-Cuando se agrega no redirecciona a reportes.
 		-Hace falta declarar propiedad serial en la bd.
 	Articulo:
 		-Quitar id_envio
 		-Cuando agrega no redirecciona al reportes
 		-Hace falta modificar.
 		-no tiene reporte html
-	Usuario:
-		-falta modificar
-		-redireccionamientos en general.
-
+	
 		
 	

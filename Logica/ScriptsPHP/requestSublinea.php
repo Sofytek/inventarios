@@ -15,8 +15,8 @@ require_once ('../Controler/HCsublinea.php');
           $control->cargarSublinea($arrsublinea);
           try
           {
-              $control->crearSublinea();
-            echo TRUE;
+              	$control->crearSublinea();
+            	echo TRUE;
           break;
           }
           catch(Exception $e)

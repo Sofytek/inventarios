@@ -29,7 +29,6 @@ abstract class ControlEmpresa extends SystemControl
 			throw new Exception('Empresa sin datos');
 		}
 		DataAccess::write($this -> empresa);
-		echo TRUE;
 	}
 	
 	//modifica una empresa existente

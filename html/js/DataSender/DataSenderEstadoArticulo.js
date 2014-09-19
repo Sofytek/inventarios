@@ -52,5 +52,5 @@ function dataR(bandera)
 
 function redireccionar()
 {
-	location.href = "main.html";	
+	location.href = "consultaEstadoArticulo.html";	
 }

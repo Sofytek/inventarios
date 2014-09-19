@@ -15,9 +15,9 @@ function events()
 function pressButton()
 {
  
-  var sublinea = $("#sublinea").val();
+  var sublinea = $("#nombre").val();
   var activo = $("#activo").prop("checked");
-  var idlinea = $("#idlinea").val();
+  var idlinea = $("#linea").val();
   
   if(activo == true)
   {
@@ -37,16 +37,17 @@ function pressButton()
 
 function dataR(bandera)
 {
+  	
   	if(bandera == 1)
 	{
-		  //setTimeout ("redireccionar()", 2000); 
-  		//alert("La sublinea ha sido agregada");
-      document.write(bandera);
+		 setTimeout ("redireccionar()", 2000); 
+  		 alert("La sublinea ha sido agregada");
+      
 	}
 	else
 	{
-		//setTimeout ("redireccionar()", 2000);
-		//alert("La sublinea no ha sido agregada");
+		setTimeout ("redireccionar()", 2000);
+		alert("La sublinea no ha sido agregada");
 		document.write(bandera);
 	}
 	
