@@ -16,11 +16,14 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 		<script src="js/vendor/jquery-1.11.1.js"></script>
 		<script type="text/javascript" src="js/vendor/jquery.serializejson.js"></script>
 		<script type="text/javascript" src="js/vendor/jquery.serializejson.min.js"></script>
+		
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.bootstrap-duallistbox.js"></script>
+        <script type="text/javascript" src="js/vendor/"></script>
 	</head>
 
 	<body>
@@ -62,14 +65,15 @@
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="formularioUsuario.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultaUsuario.php">Reportar</a></li>
+		     		<li><a href="modificarUsuario.html">Modificar</a></li>
+		     		<li><a href="consultaUsuario.html">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
    
     <!-- formulario ingreso de datos -->
         <div class="col-md-4">
-	      <form class="form-horizontal" id="formularioUsuario"> <!--method="post" action="../logica/ScriptsPHP/requestEmpresa.php">
+	      <form class="form-horizontal" id="formularioUsuario"> <!--method="post" action="../logica/ScriptsPHP/requestEmpresa.php">-->
 	
 	        <fieldset>
 	
@@ -148,92 +152,35 @@
 	            </div>
 	        </div>
 	        
+	        <!-- Dependencia, usuada como filtro para seccion -->
+	        <div class="row">
+	        <div class="control-group">
+	        	<div class="col-xs-6">	
+	          		<label class="control-label" for="Dependencia">Dependencia</label>
+	            		<div class="controls" id = "dependencia">
+			        		
+						</div>
+				</div>
+				</div>
+	        </div>
+	        
 	        
 	        <!-- Seccion -->
 	        <div class="row">
 	        <div class="control-group">
 	        	<div class="col-xs-6">	
 	          		<label class="control-label" for="seccion">Seccion</label>
-	            		<div class="controls">
-			        		<select class="form-control" name = "idseccion" id = "idseccion" class="input-xlarge">
-					  			<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+	            		<div class="controls" id = "seccion">
+			        		
 						</div>
 				</div>
 				</div>
 	        </div>
         	
-        	<!-- Roles 
-        	<form id="demoform" method="post" action="#">
-<div class="bootstrap-duallistbox-container row moveonselect">
-<div class="box1 col-md-6">
-<label for="bootstrap-duallistbox-nonselected-list_duallistbox_demo1[]" style="display: none;"></label>
-<span class="info-container">
-<span class="info">Showing all 8</span>
-<button class="btn clear1 pull-right btn-default btn-xs" type="button">show all</button>
-</span>
-<input class="filter form-control" type="text" placeholder="Filter">
-<div class="btn-group buttons">
-<button class="btn moveall btn-default" type="button" title="Move all">
-<i class="glyphicon glyphicon-arrow-right"></i>
-<i class="glyphicon glyphicon-arrow-right"></i>
-</button>
-<button class="btn move btn-default" type="button" title="Move selected">
-<i class="glyphicon glyphicon-arrow-right"></i>
-</button>
-</div>
-<select id="bootstrap-duallistbox-nonselected-list_duallistbox_demo1[]" class="form-control" multiple="multiple" name="duallistbox_demo1[]_helper1" style="height: 202px;">
-<option value="option1">Option 1</option>
-<option value="option2">Option 2</option>
-<option value="option4">Option 4</option>
-<option value="option5">Option 5</option>
-<option value="option7">Option 7</option>
-<option value="option8">Option 8</option>
-<option value="option9">Option 9</option>
-<option value="option0">Option 10</option>
-</select>
-</div>
-<div class="box2 col-md-6">
-<label for="bootstrap-duallistbox-selected-list_duallistbox_demo1[]" style="display: none;"></label>
-<span class="info-container">
-<span class="info">Showing all 2</span>
-<button class="btn clear2 pull-right btn-default btn-xs" type="button">show all</button>
-</span>
-<input class="filter form-control" type="text" placeholder="Filter">
-<div class="btn-group buttons">
-<button class="btn remove btn-default" type="button" title="Remove selected">
-<i class="glyphicon glyphicon-arrow-left"></i>
-</button>
-<button class="btn removeall btn-default" type="button" title="Remove all">
-<i class="glyphicon glyphicon-arrow-left"></i>
-<i class="glyphicon glyphicon-arrow-left"></i>
-</button>
-</div>
-<select id="bootstrap-duallistbox-selected-list_duallistbox_demo1[]" class="form-control" multiple="multiple" name="duallistbox_demo1[]_helper2" style="height: 202px;">
-<option selected="selected" value="option3">Option 3</option>
-<option selected="selected" value="option6">Option 6</option>
-</select>
-</div>
-</div>
-<select name="duallistbox_demo1[]" size="10" multiple="multiple" style="display: none;">
-<option value="option1">Option 1</option>
-<option value="option2">Option 2</option>
-<option selected="selected" value="option3">Option 3</option>
-<option value="option4">Option 4</option>
-<option value="option5">Option 5</option>
-<option selected="selected" value="option6">Option 6</option>
-<option value="option7">Option 7</option>
-<option value="option8">Option 8</option>
-<option value="option9">Option 9</option>
-<option value="option0">Option 10</option>
-</select>
-<br>
-<button class="btn btn-default btn-block" type="submit">Submit data</button>
-</form>-->
+        	<div id = "roles">
+        			
+        	</div>
+        	
         	
 	        <!-- checkBox -->
 	        <div class="checkbox">    

@@ -18,17 +18,17 @@ class HCarticulo extends ControlArticulo{
 		return $result = parent::consultarArticulos();
 	}
 
-	public function ObtenerMarcas($allData = false)
+	public function ObtenerMarcas($allData)
     {
         return parent::getMarcas($allData);
     }
 	
-	public function ObtenerSecciones($allData = false)
+	public function ObtenerSecciones($allData)
     {
         return parent::getSecciones($allData);
     }
 
-	public function ObtenerSublineas($allData = false)
+	public function ObtenerSublineas($allData)
     {
         return parent::getSublineas($allData);
     }
