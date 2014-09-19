@@ -30,8 +30,8 @@ abstract class ControlUsuario extends SystemControl
 	}
 	
 	//modifica un usuario existente
-	final protected function modificarUsuario(){
-		if($this->empresa != null){
+	final public function modificarUsuario(){
+		if($this->usuario == null){
 			throw new Exception('Usuario sin datos');
 		}
 		DataAccess::update($this->usuario);	
@@ -48,6 +48,13 @@ abstract class ControlUsuario extends SystemControl
 	final protected function consultarUsuarios()
 	{
 		return DataAccess::selectWhere($this->usuario, " ");
+	}
+	
+	final protected function consultarUsuarioXid($idusuario)
+	{
+		$this ->usuario->setIdUsuario($idusuario);
+		DataAccess::read($this->usuario);
+		return $this ->usuario ->getData()[1];
 	}
 	
 	final protected function getSecciones($allData = false) {

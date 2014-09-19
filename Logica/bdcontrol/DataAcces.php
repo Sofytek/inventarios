@@ -125,7 +125,7 @@ Class DataAccess {
 		$result = pg_query($query);
 
 		if (!$result) {
-			//throw new Exception("Error en la consulta :)");
+			throw new Exception("Error en la consulta :)");
 			
 			return;
 		}

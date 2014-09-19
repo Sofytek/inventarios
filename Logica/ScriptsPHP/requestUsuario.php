@@ -53,6 +53,45 @@ require_once ('../Controler/HCusuario.php');
 		echo json_encode($arrayjson);
 		break;
 		
+	case 4:
+		
+		$idusuario = $_REQUEST['idusuario'];
+		
+		$control ->cargarUsuario(NULL);
+		$usuario = $control -> obtenerUsuarioXid($idusuario);
+		$secciones = $control->ObtenerSecciones(TRUE);
+		$dependencias = $control->ObtenerDependencias(TRUE);
+		
+		$arrayjson['usuario'] = $usuario;
+		$arrayjson['secciones'] = $secciones;
+		$arrayjson['dependencias'] = $dependencias;
+		
+		echo json_encode($arrayjson);
+		break;
+		
+	case 5:
+		$arrayUsuario = $_REQUEST['Json'];
+	 
+	  	if($arrayUsuario != null)
+	  	{
+	    	$control->cargarUsuario($arrayUsuario);
+	    	try
+	    	{
+	      		$control->modificarUsuario();
+		  		echo TRUE;
+	    	}
+	    	catch(Exception $e)
+		    {
+		      echo $e->getMessage();
+		    }
+	  	}
+	  	else
+	  	{
+	   	 	//creacion de mensaje de respuesta (P)  
+	   		 echo("Ingrese los datos de la empresa");
+	  	}
+		break;
+		
   }
   
 ?>

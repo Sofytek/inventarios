@@ -3,9 +3,7 @@
  */
 
 reportData();
-var x;
-x=$(document);
-x.ready(events);
+
 
 function reportData()
 {
