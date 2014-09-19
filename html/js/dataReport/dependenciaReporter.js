@@ -10,7 +10,7 @@ function reportData()
 {
 	var nproceso = 2;
 
-	$.post("../logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso}, responseReportData);	
+	$.post("../Logica/ScriptsPHP/requestDependencia.php",{nproceso: nproceso}, responseReportData);	
 	return false;
 }
 

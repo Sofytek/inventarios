@@ -54,9 +54,9 @@ class Empresa implements IDataAccess{
 
 	public function setData($arrayData)
 	{
-		$this->idEmpresa = Tools::validate($arrayData['idempresa']);
-		$this->nombre = Tools::validate($arrayData['nombre']);
-		$this->activo = Tools::validate($arrayData['activo']);
+		$this->idEmpresa = $arrayData['idempresa'];
+		$this->nombre = $arrayData['nombre'];
+		$this->activo = $arrayData['activo'];
 	}
 }
 
