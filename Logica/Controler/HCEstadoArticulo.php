@@ -16,6 +16,11 @@ class HCEstadoArticulo extends ControlEstadoArticulo{
 	{
 		return $result = parent::consultarEstadoArticulo();
 	}
-
+	
+	public function obtenerEstadoArticuloXid($idestadoArticulo)
+	{
+		return $result = parent::consultarEstadoArticuloXid($idestadoArticulo);
+	}
+    
 }
 ?>

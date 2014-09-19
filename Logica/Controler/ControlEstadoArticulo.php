@@ -31,8 +31,8 @@ abstract class ControlEstadoArticulo extends SystemControl
 	}
 	
 	//modifica un estadoArticulo existente
-	final protected function modificarEstadoArticulo(){
-		if($this->estadoArticulo != null){
+	final public function modificarEstadoArticulo(){
+		if($this->estadoArticulo == null){
 			throw new Exception('EstadoArticulo sin datos');
 		}
 		DataAccess::update($this->estadoArticulo);	
@@ -46,9 +46,16 @@ abstract class ControlEstadoArticulo extends SystemControl
 		DataAccess::delete($this->estadoArticulo);	
 	}
 	
-	final protected function consultarEstadoArticulo()
-	{
-		return DataAccess::selectWhere($this->estadoArticulo, " ");
+	final protected function consultarEstadoArticulo() {
+        return DataAccess::selectWhere($this -> estadoArticulo, " ");
+    }
+	
+	final protected function consultarEstadoArticuloXid($idestadoArticulo)
+	{	
+        $this->estadoArticulo ->setIdEstadoArticulo($idestadoArticulo);	
+    	DataAccess::read($this->estadoArticulo);
+		
+    	return $this -> estadoArticulo -> getData()[1];
 	}
 }
 ?>

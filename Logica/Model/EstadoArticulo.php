@@ -16,8 +16,8 @@ class EstadoArticulo implements IDataAccess{
 	}
 	
 	//Setters and Getters
-	Public function setIdEstadoArticulo($idEstado){
-		$this->$idEstado = $idEstado;
+	public function setIdEstadoArticulo($idEstado){
+		$this->idEstado = $idEstado;
 	}
 
 	public function getIdDependencia(){
@@ -28,7 +28,7 @@ class EstadoArticulo implements IDataAccess{
 		$this->nombre = $nombre;
 	}
 
-	function &getNombre(){
+	public function getNombre(){
 		return $nombre;
 	}
 

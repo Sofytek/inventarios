@@ -28,8 +28,8 @@ abstract class ControlSeccion extends SystemControl {
     }
 
     //modifica una seccion existente
-    final protected function modificarSeccion() {
-        if ($this -> seccion != null) {
+    final public function modificarSeccion() {
+        if ($this -> seccion == null) {
             throw new Exception('Seccion sin datos');
         }
         DataAccess::update($this -> seccion);
@@ -46,6 +46,14 @@ abstract class ControlSeccion extends SystemControl {
     final protected function consultarSecciones() {
         return DataAccess::selectWhere($this -> seccion, " ");
     }
+	
+	final protected function consultarSeccionesXid($idseccion)
+	{	
+        $this->seccion ->setIdSeccion($idseccion);	
+    	DataAccess::read($this->seccion);
+		
+    	return $this -> seccion -> getData()[1];
+	}
 
     final protected function getDependencias($allData = false) {
         $dependencia = new Dependencia();
@@ -58,7 +66,7 @@ abstract class ControlSeccion extends SystemControl {
         
         $count = count($dependencias);
         for ($index = 0; $index < $count; $index++) {
-            //array asociativo idempresa-nombre
+            //array asociativo iddependencia-nombre
             $id_Dependencia[$dependencias[$index]['iddependencia']] = $dependencias[$index]['nombre'];
         }
         return $id_Dependencia;
