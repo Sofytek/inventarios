@@ -1,0 +1,18 @@
+------------------URGENTE----------------------------------
+
+	Linea: 
+		-Hace falta reporte en html.
+		-Hace falta el modificar. 
+	Marca:
+		-falta reporte html
+		-falta el modificar.	
+	EstadoArticulo:
+		-Hace falta declarar propiedad serial en la bd.
+	Articulo:
+		-Quitar id_envio
+		-Cuando agrega no redirecciona al reportes
+		-Hace falta modificar.
+		-no tiene reporte html
+	
+		
+	

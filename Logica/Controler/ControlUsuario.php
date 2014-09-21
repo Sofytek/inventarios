@@ -1,6 +1,8 @@
 <?php
 require_once 'SystemControl.php';
 require_once '../Model/Usuario.php';
+require_once '../Model/Seccion.php';
+require_once '../Model/Dependencia.php';
 //require_once '../bdcontrol/DataAcces.php';
 //require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/Model/Empresa.php";
 //require_once $_SERVER['DOCUMENT_ROOT']."/activosfijos/Logica/bdcontrol/DataAcces.php";
@@ -28,8 +30,8 @@ abstract class ControlUsuario extends SystemControl
 	}
 	
 	//modifica un usuario existente
-	final protected function modificarUsuario(){
-		if($this->empresa != null){
+	final public function modificarUsuario(){
+		if($this->usuario == null){
 			throw new Exception('Usuario sin datos');
 		}
 		DataAccess::update($this->usuario);	
@@ -47,5 +49,45 @@ abstract class ControlUsuario extends SystemControl
 	{
 		return DataAccess::selectWhere($this->usuario, " ");
 	}
+	
+	final protected function consultarUsuarioXid($idusuario)
+	{
+		$this ->usuario->setIdUsuario($idusuario);
+		DataAccess::read($this->usuario);
+		return $this ->usuario ->getData()[1];
+	}
+	
+	final protected function getSecciones($allData = false) {
+        $seccion = new Seccion();
+        $secciones =  DataAccess::selectWhere($seccion);
+        
+        if ($allData) {
+            return $secciones;
+        }
+        
+        $count = count($secciones);
+        for ($index = 0; $index < $count; $index++) {
+            //array asociativo idseccion-nombre
+            $id_Seccion[$secciones[$index]['idseccion']] = $secciones[$index]['nombre'];
+        }
+        return $id_Seccion;
+    }
+	
+	final protected function getDependencias($allData = false) {
+        $dependencia = new Dependencia();
+        $dependencias = DataAccess::selectWhere($dependencia);
+        
+        if($allData)
+        {
+            return $dependencias;
+        }
+        
+        $count = count($dependencias);
+        for ($index = 0; $index < $count; $index++) {
+            //array asociativo idempresa-nombre
+            $id_Dependencia[$dependencias[$index]['iddependencia']] = $dependencias[$index]['nombre'];
+        }
+        return $id_Dependencia;
+    }
 }
 ?>

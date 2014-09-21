@@ -22,6 +22,8 @@
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/vendor/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.serializejson.js"></script>
+		<script type="text/javascript" src="js/vendor/jquery.serializejson.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
 
@@ -47,16 +49,17 @@
     <!-- menu superior -->
      <div class="container" style="padding-top: 1em;">
   		 <ul class="nav nav-tabs nav-justified">
-    		 <li><a href="main.html">Inicio</a></li>
-		     <li><a href="Empresa.html">Empresa</a></li>
-         	 <li><a href="Dependencia.html">Dependencia</a></li>
-         	 <li class="active"><a href="Seccion.html">Seccion</a></li>
-         	 <li><a href="Linea.html">Linea</a></li>
-         	 <li><a href="Marca.html">Marca</a></li>
-         	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
-         	 <li><a href="Articulo.html">Articulo</a></li>
-         	 <li><a href="Solicitud.html">Solicitud</a></li>
-		     <li><a href="Usuario.html">Usuario</a></li>
+	   		 <li><a href="main.html">Inicio</a></li>
+		     <li><a href="consultaEmpresa.html">Empresa</a></li>
+	       	 <li><a href="consultaDependencia.html">Dependencia</a></li>
+	       	 <li><a href="consultaSeccion.html">Seccion</a></li>
+	       	 <li><a href="Linea.html">Linea</a></li>
+	         <li><a href="Sublinea.html">Sublinea</a></li>
+	       	 <li><a href="Marca.html">Marca</a></li>
+	       	 <li><a href="consultaEstadoArticulo.html">Estado Articulo</a></li>
+	         <li class="active"><a href="Articulo.html">Articulo</a></li>
+	         <li><a href="consultaSolicitud.html">Solicitud</a></li>
+		     <li><a href="consultaUsuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
@@ -72,23 +75,23 @@
 				</ul>
       		</div>
 		  
-        <div class="col-md-4">
-	      <form class="form-horizontal"> <!--action="../logica/ScriptsPHP/requestSeccion.php">-->
+        <div class="col-md-10">
+	      <form class="form-horizontal" id = "formularioArticulo"> <!--action="../logica/ScriptsPHP/requestArticulo.php">-->
 	
 	        <fieldset>
 	
 	        <!-- Form Name -->
-	        <legend>Ingresar una nuevo Articulo</legend>
+	        <legend>Ingresar un nuevo Articulo</legend>
 	
-	        <!-- Text input-->
+	        <!-- nombre -->
 	        <div class="control-group">
 	          <label class="control-label" for="nombreArticulo">Nombre </label>
 	            <div class="controls">
-	              <input id="articulo" name="articulo" type="text" placeholder="Nombre Articulo" class="input-xlarge" required="">
+	              <input id="nombre" name="nombre" type="text" placeholder="Nombre Articulo" class="input-xlarge" required="">
 	            </div>
 	        </div>
 
-	        <!-- Text input-->
+	        <!-- tipo-->
 	        <div class="control-group">
 	          <label class="control-label" for="tipo">Tipo Articulo </label>
 	            <div class="controls">
@@ -96,7 +99,7 @@
 	            </div>
 	        </div>
 
-	        <!-- Text input-->
+	        <!-- referencia-->
 	        <div class="control-group">
 	          <label class="control-label" for="nomReferencia">Referencia </label>
 	            <div class="controls">
@@ -104,7 +107,7 @@
 	            </div>
 	        </div>
 
-	        <!-- Text input-->
+	        <!-- unidad-->
 	        <div class="control-group">
 	          <label class="control-label" for="nomUnidad">Unidad del Articulo </label>
 	            <div class="controls">
@@ -112,7 +115,7 @@
 	            </div>
 	        </div>
         
-	        <!-- checkBox -->
+	        <!-- activo -->
 	        <div class="checkbox">    
 	              <label for="checkboxes-0">      
 	                <input name="activo" id="activo" type="checkbox" value="1">Activo
@@ -122,16 +125,9 @@
 	        <!-- marca -->
 	        <div class="row">
 	        <div class="control-group">
-	        	<div class="col-xs-6">	
+	        	<div class="col-xs-2">	
 	          		<label class="control-label" for="marca">Marca del Articulo</label>
-	            		<div class="controls">
-			        		<select class="form-control" id = "idmarca" class="input-xlarge">
-					  			<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+	            		<div id = "Mmarca"class="controls">
 						</div>
 				</div>
 				</div>
@@ -140,16 +136,9 @@
 	        <!-- seccion -->
 	        <div class="row">
 	        <div class="control-group">
-	        	<div class="col-xs-6">	
+	        	<div class="col-xs-2">	
 	          		<label class="control-label" for="seccion">Seccion</label>
-	            		<div class="controls">
-			        		<select class="form-control" id = "idseccion" class="input-xlarge">
-					  			<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+	            		<div id = "Sseccion"class="controls">
 						</div>
 				</div>
 				</div>
@@ -158,26 +147,19 @@
 	        <!-- sublinea -->
 	        <div class="row">
 	        <div class="control-group">
-	        	<div class="col-xs-6">	
+	        	<div class="col-xs-2">	
 	          		<label class="control-label" for="sublinea">Sublinea</label>
-	            		<div class="controls">
-			        		<select class="form-control" id = "idsublinea" class="input-xlarge">
-					  			<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+	            		<div id = "Ssublinea"class="controls">
 						</div>
 				</div>
 				</div>
 	        </div>
 	        
-	        <!-- Text input-->
+	        <!--id_envio-->
 	        <div class="control-group">
 	          <label class="control-label" for="idenvio">id Envio </label>
 	            <div class="controls">
-	              <input id="idenvio" name="idenvio" type="text" placeholder="ID Envio" class="input-xlarge" required="">
+	              <input id="id_envio" name="id_envio" type="text" placeholder="ID Envio" class="input-xlarge" required="">
 	            </div>
 	        </div>
 	        
@@ -189,8 +171,7 @@
 	        </div>
 
 	        <!-- Unicamente activa si es un activo fijo-->
-	        
-	        <div class="row">
+	        <div class="row" id = "formularioActivo">	
 	        	<div class="control-group">
 	        		<div class="col-xs-6">
 
@@ -198,7 +179,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="capitalizacion">Capitalizacion </label>
 				            <div class="controls">
-				              <input id="capitalizado" name="capitalizado" type="text" placeholder="Capitalizacion" class="input-xlarge" required="">
+				              <input id="capitalizado_el_af" name="capitalizado_el_af" type="text" value="1800/01/01" class="input-xlarge">
 				            </div>
 				        </div>
 				        
@@ -206,7 +187,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="amortizacionAcumulada">Amortización Acumulada </label>
 				            <div class="controls">
-				              <input id="amoracumulada" name="amoracumulada" type="text" placeholder="Amortización Acumulada" class="input-xlarge" required="">
+				              <input id="amoracumulada" name="amoracumulada" type="text" placeholder="Amortización Acumulada" class="input-xlarge">
 				            </div>
 				        </div>
 				        
@@ -214,7 +195,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="valContable">Valor Contable </label>
 				            <div class="controls">
-				              <input id="valcontable" name="valcontable" type="text" placeholder="Valor Contable" class="input-xlarge" required="">
+				              <input id="valcontable" name="valcontable" type="text" placeholder="Valor Contable" class="input-xlarge" >
 				            </div>
 				        </div>
 
@@ -222,7 +203,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="numSerie">Número de Serie </label>
 				            <div class="controls">
-				              <input id="numserie" name="numserie" type="text" placeholder="Número de Serie" class="input-xlarge" required="">
+				              <input id="numserie" name="numserie" type="text" placeholder="Número de Serie" class="input-xlarge">
 				            </div>
 				        </div>
 
@@ -230,7 +211,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="plaqueta">Plaqueta </label>
 				            <div class="controls">
-				              <input id="plaqueta" name="plaqueta" type="text" placeholder="Plaqueta" class="input-xlarge" required="">
+				              <input id="plaqueta" name="plaqueta" type="text" placeholder="Plaqueta" class="input-xlarge">
 				            </div>
 				        </div>
 
@@ -238,7 +219,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="plaquetaAnt1">Plaqueta Anterior 1</label>
 				            <div class="controls">
-				              <input id="plaquetaant1" name="plaquetaant1" type="text" placeholder="Plaqueta Anterior 1" class="input-xlarge" required="">
+				              <input id="plaquetaant1" name="plaquetaant1" type="text" placeholder="Plaqueta Anterior 1" class="input-xlarge">
 				            </div>
 				        </div>
 
@@ -246,7 +227,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="plaquetaAnt2">Plaqueta Anterior 2</label>
 				            <div class="controls">
-				              <input id="plaquetaant2" name="plaquetaant2" type="text" placeholder="Plaqueta Anterior 2" class="input-xlarge" required="">
+				              <input id="plaquetaant2" name="plaquetaant2" type="text" placeholder="Plaqueta Anterior 2" class="input-xlarge">
 				            </div>
 				        </div>
 
@@ -254,7 +235,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="supranumero">Supranumero</label>
 				            <div class="controls">
-				              <input id="supranumero" name="supranumero" type="text" placeholder="Supranumero" class="input-xlarge" required="">
+				              <input id="supranumero" name="supranumero" type="text" placeholder="Supranumero" class="input-xlarge">
 				            </div>
 				        </div>
 
@@ -262,7 +243,7 @@
 				        <div class="control-group">
 				          <label class="control-label" for="ccResponsable">Cédula del Responsable</label>
 				            <div class="controls">
-				              <input id="ccresponsable" name="ccresponsable" type="text" placeholder="Cédula del Responsable" class="input-xlarge" required="">
+				              <input id="ccresponsable" name="ccresponsable" type="text" placeholder="Cédula del Responsable" class="input-xlarge">
 				            </div>
 				        </div>
 	        		</div>

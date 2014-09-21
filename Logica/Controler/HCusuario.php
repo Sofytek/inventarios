@@ -14,6 +14,21 @@ class HCusuario extends ControlUsuario{
 	{
 		return $result = parent::consultarUsuarios();
 	}
+	
+	public function ObtenerUsuarioXid($idusuario)
+    {
+        return parent::consultarUsuarioXid($idusuario);
+    }
+	
+	public function ObtenerSecciones($allData)
+    {
+        return parent::getSecciones($allData);
+    }
+	
+	public function ObtenerDependencias($allData = false)
+    {
+        return parent::getDependencias($allData);
+    }
 
 }
 ?>

@@ -20,7 +20,7 @@ class Sublinea implements IDataAccess{
 	//Setters and Getters
 	Public function setIdSublinea($idSublinea)
 	{
-		$this->$idSublinea = $idSublinea;
+		$this->idSublinea = $idSublinea;
 	}
 
 	public function getIdSublinea()
@@ -33,7 +33,7 @@ class Sublinea implements IDataAccess{
 		$this->nombre = $nombre;
 	}
 
-	public function getNombre()
+	public function &getNombre()
 	{
 		return $nombre;
 	}
@@ -73,10 +73,10 @@ class Sublinea implements IDataAccess{
 
 	public function setData($arrayData)
 	{
-		$this->idSublinea = Tools::validate($arrayData['idslinea']);
-		$this->nombre = Tools::validate($arrayData['nombre']);
-		$this->activo = Tools::validate($arrayData['activo']);
-		$this->idLinea = Tools::validate($arrayData['idlinea']);
+		$this->idSublinea = $arrayData['idslinea'];
+		$this->nombre = $arrayData['nombre'];
+		$this->activo = $arrayData['activo'];
+		$this->idLinea = $arrayData['idlinea'];
 	}
 }
     

@@ -17,8 +17,15 @@ class HCsublinea extends ControlSublinea
 	{
 		return $result = parent::consultarSublineas();
 	}
-    public function getLineas($allData = false) {
-        parent::getLineas($allData);
+
+	public function obtenerSublineaXid($idslinea)
+	{
+		return $result = parent::consultarSublineaXid($idslinea);
+	}
+
+    final public function obtenerLineas($allData = false) 
+    {
+        return parent::getLineas($allData);
     }
 }
 ?>

@@ -9,7 +9,7 @@ class Tools {
         if (isset($value)) {
             return $value;
         } else {
-            return "";
+            return "0";
         }
     }
 

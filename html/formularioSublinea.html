@@ -19,12 +19,12 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/vendor/jquery-1.11.1.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
-
+		<script type="text/javascript" src="js/vendor/jquery.serializejson.js"></script>
+		<script type="text/javascript" src="js/vendor/jquery.serializejson.min.js"></script>
         
     </head>
     <body>
@@ -47,17 +47,17 @@
     <!-- menu superior -->
      <div class="container" style="padding-top: 1em;">
   		 <ul class="nav nav-tabs nav-justified">
-    		 <li><a href="main.html">Inicio</a></li>
-		     <li><a href="Empresa.html">Empresa</a></li>
-         	 <li><a href="Dependencia.html">Dependencia</a></li>
-         	 <li><a href="Seccion.html">Seccion</a></li>
-         	 <li><a href="Linea.html">Linea</a></li>
-         	 <li class="active"><a href="Sublinea.html">Sublinea</a></li>
-         	 <li><a href="Marca.html">Marca</a></li>
-         	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
-         	 <li><a href="Articulo.html">Articulo</a></li>
-         	 <li><a href="Solicitud.html">Solicitud</a></li>
-		     <li><a href="Usuario.html">Usuario</a></li>
+	   		 <li><a href="main.html">Inicio</a></li>
+		     <li><a href="consultaEmpresa.html">Empresa</a></li>
+	       	 <li><a href="consultaDependencia.html">Dependencia</a></li>
+	       	 <li><a href="consultaSeccion.html">Seccion</a></li>
+	       	 <li><a href="Linea.html">Linea</a></li>
+	         <li class = "active"><a href="Sublinea.html">Sublinea</a></li>
+	       	 <li><a href="Marca.html">Marca</a></li>
+	       	 <li><a href="consultaEstadoArticulo.html">Estado Articulo</a></li>
+	         <li><a href="Articulo.html">Articulo</a></li>
+	         <li><a href="consultaSolicitud.html">Solicitud</a></li>
+		     <li><a href="consultaUsuario.html">Usuario</a></li>
 		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
 	  	 </ul>
 	   </div> 
@@ -67,14 +67,15 @@
       <div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioSublinea.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultaSublinea.php">Reportar</a></li>
+					<li class="active"><a href="formularioSublinea.html">Registrar</a></li>
+					<li><a href="modificarSublinea.html">Modificar</a></li>
+		     		<li><a href="consultaSublinea.html">Reportar</a></li>
 		     		<li><a href="main.html">Volver</a></li>
 				</ul>
       		</div>
 		  
         <div class="col-md-4">
-	      <form class="form-horizontal"> <!--action="../logica/ScriptsPHP/requestSeccion.php">-->
+	      <form class="form-horizontal" id = "formularioSublinea"> <!--action="../logica/ScriptsPHP/requestSeccion.php">-->
 	
 	        <fieldset>
 	
@@ -85,7 +86,7 @@
 	        <div class="control-group">
 	          <label class="control-label" for="nombreSublinea">Nombre </label>
 	            <div class="controls">
-	              <input id="sublinea" name="sublinea" type="text" placeholder="Nombre Sublinea" class="input-xlarge" required="">
+	              <input id="nombre" name="nombre" type="text" placeholder="Nombre Sublinea" class="input-xlarge" required="">
 	            </div>
 	        </div>
         
@@ -100,15 +101,9 @@
 	        <div class="row">
 	        <div class="control-group">
 	        	<div class="col-xs-6">	
-	          		<label class="control-label" for="idlinea">Lineas</label>
-	            		<div class="controls">
-			        		<select class="form-control" id = "idlinea" class="input-xlarge">
-					  			<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
+	          		<label class="control-label" for="Linea">Lineas</label>
+	            		<div id ="Alinea"class="controls">
+			        		
 						</div>
 				</div>
 				</div>

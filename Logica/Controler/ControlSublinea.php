@@ -34,8 +34,8 @@ abstract class ControlSublinea extends SystemControl
 	}
 	
 	//modifica una sublinea existente
-	final protected function modificarSublinea(){
-		if($this->sublinea != null){
+	final public function modificarSublinea(){
+		if($this->sublinea == null){
 			throw new Exception('Sublinea sin datos');
 		}
 		DataAccess::update($this->sublinea);	
@@ -52,6 +52,14 @@ abstract class ControlSublinea extends SystemControl
 	final protected function consultarSublineas()
 	{
 		return DataAccess::selectWhere($this->sublinea, " ");
+	}
+
+	final protected function consultarSublineaXid($idslinea)
+	{
+        $this->sublinea ->setIdSublinea($idslinea);	
+    	DataAccess::read($this->sublinea);
+		
+    	return $this -> sublinea -> getData()[1];
 	}
     
     final protected function getLineas($allData = false) {
