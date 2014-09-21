@@ -1,5 +1,5 @@
 <?php
-require_once ('Tools.php');
+require_once ('../Tools/Tools.php');
 require_once ('../bdcontrol/IDataAccess.php');
 
 class Empresa implements IDataAccess{

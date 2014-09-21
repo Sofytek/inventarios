@@ -1,6 +1,6 @@
 <?php
     require_once ('../bdcontrol/IDataAccess.php');
-    require_once ('Tools.php');
+    require_once ('../Tools/Tools.php');
 
 class Articulo implements IDataAccess{
 

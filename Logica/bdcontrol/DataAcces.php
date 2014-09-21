@@ -142,9 +142,9 @@ Class DataAccess {
 		
 		$query = "SELECT * FROM ".$table;
 		
-		/*if($positionWhile != null){
+		if($positionWhile != null){
     		$query.= " WHERE " . pg_escape_string($columName[$positionWhile]) . " = '" . pg_escape_string($values[$positionWhile])."'"; 
-		}*/
+		}
 		$query.=";";
 		
 	
@@ -156,7 +156,6 @@ Class DataAccess {
 		}
 		
 		$dataArry = null;
-		
 		while ($row = pg_fetch_assoc($result)) {
 			$dataArry[] = $row;
 		}

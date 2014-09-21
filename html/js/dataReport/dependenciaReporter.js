@@ -2,9 +2,9 @@
  * @author User
  */
 reportData();
-var x;
+/*var x;
 x=$(document);
-x.ready(events);
+x.ready(events);*/
 
 function reportData()
 {

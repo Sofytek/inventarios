@@ -1,79 +1,85 @@
-/*$(document).ready(function(){
-	$("#iniciar").click(function(){
-		var usuario = $('#usuario').val();
-		var password = $('#password').val();
-		//console.log(usuario,contrasenia);
-		$.ajax({
-			type: "POST", 
-			dataType: 'json',
-			url: '../logica/ScriptsPHP/Rlog.php',
-			data:{usuario:usuario, password:password},
-			success:function(response){
-				if(response.respuesta == true){
-					$("#mensaje").html(response.mensaje)
-					window.location = 'Principal.php';
-				}
-				else{
-					$("#mensaje").html(response.mensaje)
-				}
-			},error:function(){
-				alert('Error general en el sistema');
-			}
-
-		});
-	});
-});*/
 var doc = $(document);
- doc.ready(onclick);
+doc.ready(onclick);
 
-function onclick(){
+function onclick() {
 	$("#iniciar").click(logon);
 }
 
-function logon()
-{
+function logon() {
+	var nproceso = '1';
 	var usuario = $('#usuario').val();
 	var password = $('#password').val();
-	var url = "../Logica/ScriptsPHP/Rlog.php";
-	var data = 
-	
-	$.post(url, {'user':usuario, 'password':password}, resul); 
+	var url = "../logica/ScriptsPHP/Rlog.php";
+	var data = $.post(url, {
+		'nproceso' : nproceso,
+		'user' : usuario,
+		'password' : password
+	}, resul);
+
 	return false;
 }
 
-function resul (argument) {
-  
-  	/*
-  	 var obj = JSON.parse(argument);
-  	if(obj.proceso){
-  		//post main
-  	}
-  	else
-  	{
- 		//doc. pasa el div visble y le da el mensaje del json 		
-  	}*/
-  	
-  	if(argument == 1)
-  	{
-	  	setTimeout ("redireccionar("+argument+")", 2000); 
-	  	alert("Bienvenido");
-  	}
-  	else
-  	{
-  		$('#debug').append("Warnig:<br>"+argument);
-  		//setTimeout("(redireccionar("+argument+")", 2000);	
-  	} 
+function resul(argument) {
+
+	var obj = jQuery.parseJSON(argument);
+
+	if (obj.result) {
+		location.href = 'main2.html';
+	} else if(obj.mensaje){
+		$('#debug').empty();
+		$('#debug').append("Warnig:<br>" + obj.mensaje);
+	}
+
 }
 
-function redireccionar(argument)
-{
-	if(argument == 1)
-	{
-		location.href = "main.html";		
+function redireccionar(argument) {
+	if (argument == 1) {
+		location.href = "main.html";
+	} else {
+		//location.href = "index.html";
+	}
+
+}
+
+function logoff() {
+	var logoff = $_GET('logoff');
+	if (logoff == 1) {
+		$('#debug').append("Session cerrada correctamente.");
+	}
+	else if(logoff == 2) 
+	{	
+		$('#debug').append("Porfavor iniciar seccion.");
 	}
 	else
 	{
-		//location.href = "index.html";		
+		var nproceso = '3';
+		var url = "../logica/ScriptsPHP/Rlog.php";
+		var data = $.post(url, {
+		'nproceso' : nproceso,
+	}, resul);
 	}
-	
+}
+
+function $_GET(param) {
+	url = document.URL;
+	url = String(url.match(/\?+.+/));
+	url = url.replace("?", "");
+	url = url.split("&");
+
+	x = 0;
+	while (x < url.length) {
+		p = url[x].split("=");
+		if (p[0] == param) {
+			return decodeURIComponent(p[1]);
+		}
+		x++;
+	}
+}
+
+function loadSession(){
+	var nproceso = '3';
+	var url = "../logica/ScriptsPHP/Rlog.php";
+	var data = $.post(url, {
+		'nproceso' : nproceso,
+	}, resul);
 }
