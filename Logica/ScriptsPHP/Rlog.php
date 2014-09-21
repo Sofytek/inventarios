@@ -63,6 +63,27 @@ switch ($nproceso) {
         }
         echo json_encode($proseso);
         break;
+      
+    case '3':
+        if(isset($_SESSION['logon']))
+        {            
+            if($_SESSION['logon'])
+            {
+                $proseso['result'] = TRUE;         
+            }
+            else
+            {
+                $proseso['result'] = FALSE; 
+                $proseso['codigo'] = 0; 
+            }
+        }
+        else {
+            $proseso['result'] = FALSE;
+            $proseso['codigo'] = 0; 
+        }
+        echo json_encode($proseso);
+        break;
+      
     
 	default:
 		

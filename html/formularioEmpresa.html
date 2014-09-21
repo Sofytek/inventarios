@@ -2,115 +2,87 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<style>
+			body {
+				padding-top: 50px;
+				padding-bottom: 20px;
+			}
+		</style>
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/vendor/jquery-1.11.1.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="js/vendor/jquery-1.11.1.js"></script>
+		<script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
 
-        
-    </head>
-    <body>
-    <script type="text/javascript" src="js/DataSender/DataSender.js"></script>
-    <div class="container">
-      <!-- Logo Empresa -->
-      <div class="row">
-        <div class="col-md-4">
-          <img src="imagenes/logo.gif">
-      	</div>
-      	<div class="col-md-4">
-      		<h1>Sofyinventarios<br> 
-      		<small> v. Beta </small>
-      		</h1>
-      	</div>
-      </div>	
-    </div>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/DataSender/DataSender.js"></script>
 
-      
-    <!-- menu superior -->
-     <div class="container" style="padding-top: 1em;">
-  		 <ul class="nav nav-tabs nav-justified">
-    		 <li><a href="main.html">Inicio</a></li>
-		     <li class="active"><a href="Empresa.html">Empresa</a></li>
-       	 <li><a href="Dependencia.html">Dependencia</a></li>
-       	 <li><a href="Seccion.html">Seccion</a></li>
-       	 <li><a href="Linea.html">Linea</a></li>
-         <li><a href="Sublinea.html">Sublinea</a></li>
-       	 <li><a href="Marca.html">Marca</a></li>
-       	 <li><a href="EstadoArticulo.html">Estado Articulo</a></li>
-         <li><a href="Articulo.html">Articulo</a></li>
-         <li><a href="Solicitud.html">Solicitud</a></li>
-		     <li><a href="Usuario.html">Usuario</a></li>
-		     <li><a href="index.html">Salir</a></li> <!-- no elimina sessions, por favor revisar -->
-	  	 </ul>
-	   </div> 
-    
-    <p>
-    <div class="container">
-      <div class="row">
+		<div class="row">
 			<div class="col-md-2">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="formularioEmpresa.html">Registrar</a></li>
-		     		<li><a href="../Logica/ScriptsPHP/consultarEmpresa.php">Reportar</a></li>
-		     		<li><a href="main.html">Volver</a></li>
+					<li>
+						<a href="formularioEmpresa.html">Registrar</a>
+					</li>
+					<li>
+						<a href="../Logica/ScriptsPHP/consultarEmpresa.php">Reportar</a>
+					</li>
+					<li>
+						<a href="main.html">Volver</a>
+					</li>
 				</ul>
-      		</div>
-		  
-        <div class="col-md-4">
-	      <form class="form-horizontal"> <!--action="../logica/ScriptsPHP/requestEmpresa.php">-->
-	
-	        <fieldset>
-	
-	        <!-- Form Name -->
-	        <legend>Ingresar una nueva Empresa</legend>
-	
-	        <!-- Text input-->
-	        <div class="control-group">
-	          <label class="control-label" for="nombreEmpresa">Nombre </label>
-	            <div class="controls">
-	              <input id="empresa" name="empresa" type="text" placeholder="Nombre Empresa" class="input-xlarge" required="">
-	            </div>
-	        </div>
-        
-	        <!-- checkBox -->
-	        <div class="checkbox">    
-	              <label for="checkboxes-0">      
-	                <input name="activo" id="activo" type="checkbox" value="1">Activo
-	              </label>	
-	        </div>
-	
-	        <!-- Button -->
-	        <div class="control-group">
-	          <label class="control-label" for="botonGuardarEmpresa"></label>
-	          <div class="controls">
-	            <input type = "submit" id="botonGuardarEmpresa" name="botonGuardarEmpresa" class="btn btn-primary" value="Guardar">
-	          </div>
-	        </div>
-	        </fieldset>
-        </form> 
-	  </div>
-	</div>
+			</div>
 
-    </div>
-	
-    
-        
-    </body>
+			<div class="col-md-4">
+				<form class="form-horizontal">
+					<!--action="../logica/ScriptsPHP/requestEmpresa.php">-->
+
+					<fieldset>
+
+						<!-- Form Name -->
+						<legend>
+							Ingresar una nueva Empresa
+						</legend>
+
+						<!-- Text input-->
+						<div class="control-group">
+							<label class="control-label" for="nombreEmpresa">Nombre </label>
+							<div class="controls">
+								<input id="empresa" name="empresa" type="text" placeholder="Nombre Empresa" class="input-xlarge" required="">
+							</div>
+						</div>
+
+						<!-- checkBox -->
+						<div class="checkbox">
+							<label for="checkboxes-0">
+								<input name="activo" id="activo" type="checkbox" value="1">
+								Activo </label>
+						</div>
+
+						<!-- Button -->
+						<div class="control-group">
+							<label class="control-label" for="botonGuardarEmpresa"></label>
+							<div class="controls">
+								<input type = "submit" id="botonGuardarEmpresa" name="botonGuardarEmpresa" class="btn btn-primary" value="Guardar">
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</body>
 </html>

@@ -24,7 +24,7 @@ function resul(argument) {
 
 	if (obj.result) {
 		location.href = 'main2.html';
-	} else {
+	} else if(obj.mensaje){
 		$('#debug').empty();
 		$('#debug').append("Warnig:<br>" + obj.mensaje);
 	}
@@ -49,6 +49,14 @@ function logoff() {
 	{	
 		$('#debug').append("Porfavor iniciar seccion.");
 	}
+	else
+	{
+		var nproceso = '3';
+		var url = "../logica/ScriptsPHP/Rlog.php";
+		var data = $.post(url, {
+		'nproceso' : nproceso,
+	}, resul);
+	}
 }
 
 function $_GET(param) {
@@ -65,4 +73,12 @@ function $_GET(param) {
 		}
 		x++;
 	}
+}
+
+function loadSession(){
+	var nproceso = '3';
+	var url = "../logica/ScriptsPHP/Rlog.php";
+	var data = $.post(url, {
+		'nproceso' : nproceso,
+	}, resul);
 }
