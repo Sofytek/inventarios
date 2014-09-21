@@ -23,7 +23,7 @@ function result(argument){
 		{
 			var href = menus[i] + ".html";
 			href = href.replace(' ','');
-			$('#listaMenu').append("<li><a onclick=\"return changeFrame('" + href + "');\">"+ menus[i] +"</a></li>");	
+			$('#listaMenu').append("<li><a onclick=\"return changeFrame('consulta" + href + "');\">"+ menus[i] +"</a></li>");	
 		}
 		$('#listaMenu').append("<li><a onclick=\"return logoff();\">Salir</a></li>");
 		$('#userinfo').append("Usuario: " + obj.usuario);
