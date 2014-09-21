@@ -19,31 +19,24 @@ class RolNames {
 			case 1:
 				return self::$ROL_EMPRESA;
 				break;
-			
 			case 2:
 				return self::$ROL_DEPENDENCIA;
 				break;
-			
 			case 3:
 				return self::$ROL_SECCION;
 				break;
-			
 			case 4:
 				return self::$ROL_LINEA;
 				break;
-			
 			case 5:
 				return self::$ROL_SUBLINEA;
 				break;
-			
 			case 6:
 				return self::$ROL_MARCA;
 				break;
-			
 			case 7:
 				return self::$ROL_ESTADO_ARTICULO;
 				break;
-			
 			case 8:
 				return self::$ROL_USUAIROS;
 				break;

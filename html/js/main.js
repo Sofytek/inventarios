@@ -1,3 +1,6 @@
+/*var doc =$('#btnsalir');
+doc.ready(logoff);
+*/
 function cargarMenu() {
 	var nproseso = 2;
 	var url="../Logica/ScriptsPHP/Rlog.php";
@@ -18,12 +21,10 @@ function result(argument){
 		var menu = obj.menu;
 		var menus = new Array();
 		menus =  menu.nombres;
-		
 		for(var i=0 ;i<menus.length;i++)
 		{
-			var href = menus[i] + ".html";
-			href = href.replace(' ','');
-			$('#listaMenu').append("<li><a onclick=\"return changeFrame('" + href + "');\">"+ menus[i] +"</a></li>");	
+			//<li><a href="Empresa.html">Empresa</a></li>
+			$('#listaMenu').append("<li><a href=\"" + menus[i] + ".html\">"+ menus[i] +"</a></li>");	
 		}
 		$('#listaMenu').append("<li><a onclick=\"return logoff();\">Salir</a></li>");
 		$('#userinfo').append("Usuario: " + obj.usuario);
@@ -38,8 +39,4 @@ function result(argument){
 			location.href = "index.html?logoff=2";
 		}
 	}
-}
-
-function changeFrame (url) {
-	$('#frame').attr("src", url);
 }
