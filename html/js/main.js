@@ -41,5 +41,10 @@ function result(argument){
 }
 
 function changeFrame (url) {
+	$('#find').css("display", "none");	
 	$('#frame').attr("src", url);
+}
+
+function viewFind(){
+	$('#find').css("display", "block");	
 }

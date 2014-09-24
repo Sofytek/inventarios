@@ -133,7 +133,7 @@ Class DataAccess {
 
 	}
 	
-	public static function selectWhere(IDataAccess $dataAccess, $positionWhile=null)
+	public static function selectWhere(IDataAccess $dataAccess, $positionWhile = '')
 	{
 		$dbconexion = self::$dbcon;
 		$table = $dataAccess->getTitle();
@@ -142,7 +142,7 @@ Class DataAccess {
 		
 		$query = "SELECT * FROM ".$table;
 		
-		if($positionWhile != null){
+		if($positionWhile != ''){
     		$query.= " WHERE " . pg_escape_string($columName[$positionWhile]) . " = '" . pg_escape_string($values[$positionWhile])."'"; 
 		}
 		$query.=";";
