@@ -9,7 +9,7 @@ function logon() {
 	var nproceso = '1';
 	var usuario = $('#usuario').val();
 	var password = $('#password').val();
-	var url = "../logica/ScriptsPHP/Rlog.php";
+	var url = "../Logica/ScriptsPHP/Rlog.php";
 	var data = $.post(url, {
 		'nproceso' : nproceso,
 		'user' : usuario,
@@ -53,7 +53,7 @@ function logoff() {
 	else
 	{
 		var nproceso = '3';
-		var url = "../logica/ScriptsPHP/Rlog.php";
+		var url = "../Logica/ScriptsPHP/Rlog.php";
 		var data = $.post(url, {
 		'nproceso' : nproceso,
 	}, resul);
@@ -78,7 +78,7 @@ function $_GET(param) {
 
 function loadSession(){
 	var nproceso = '3';
-	var url = "../logica/ScriptsPHP/Rlog.php";
+	var url = "../Logica/ScriptsPHP/Rlog.php";
 	var data = $.post(url, {
 		'nproceso' : nproceso,
 	}, resul);
