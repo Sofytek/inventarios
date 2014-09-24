@@ -21,7 +21,7 @@ class Linea implements IDataAccess{
 	}
 
 	public function getIdLinea(){
-		return $idLinea; 
+		return $this -> idLinea; 
 	}
 
 	public function setNombre($nombre){
@@ -54,9 +54,9 @@ class Linea implements IDataAccess{
 
 	public function setData($arrayData)
 	{
-		$this->idLinea = Tools::validate($arrayData['idlinea']);
-		$this->nombre = Tools::validate($arrayData['nombre']);
-		$this->activo = Tools::validate($arrayData['activo']);
+		$this->idLinea = $arrayData['idlinea'];
+		$this->nombre = $arrayData['nombre'];
+		$this->activo = $arrayData['activo'];
 	}
 }
 

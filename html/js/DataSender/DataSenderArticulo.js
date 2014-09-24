@@ -65,7 +65,7 @@ function pressButton()
   
   var nproceso = 1;
   var JSON = $('#formularioArticulo').serializeJSON();
-  $.post("../logica/ScriptsPHP/requestArticulo.php",{Json:JSON, nproceso: nproceso}, dataR); 
+  $.post("../Logica/ScriptsPHP/requestArticulo.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -93,7 +93,7 @@ function redireccionar()
 function prepareData()
 {
 	var nproceso = 3;
-	$.post("../logica/ScriptsPHP/requestArticulo.php",{nproceso: nproceso}, responsePrepareData);	
+	$.post("../Logica/ScriptsPHP/requestArticulo.php",{nproceso: nproceso}, responsePrepareData);	
 	return false;
 }
 

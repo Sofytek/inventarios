@@ -18,7 +18,7 @@ abstract class ControlLinea extends SystemControl
 
 	public function setLinea($arrlinea)
 	{
-		$this->linea = new Linea($arrlinea);		
+		$this -> linea = new Linea($arrlinea);		
 	}
 
 	/*
@@ -28,24 +28,26 @@ abstract class ControlLinea extends SystemControl
 	//crea una linea
 	final public function crearLinea()
 	{
-		if($this->linea == null){
+		if($this -> linea == null){
 			throw new Exception('Linea sin datos');
 		}
-		DataAccess::write($this->linea);
+		DataAccess::write($this -> linea);
 		
 	}
 	
 	//modifica una linea existente
-	final protected function modificarLinea(){
-		if($this->linea != null){
+	final protected function modificarLinea()
+	{
+		if($this->linea == null){
 			throw new Exception('Linea sin datos');
 		}
 		DataAccess::update($this->linea);	
 	}  
 
 	//Elimina una linea existente
-	final protected function eliminar(){
-		if($this->linea != null){
+	final protected function eliminar()
+	{
+		if($this -> linea != null){
 			throw new Exception('Linea sin datos');
 		}
 		DataAccess::delete($this->linea);	
@@ -53,7 +55,15 @@ abstract class ControlLinea extends SystemControl
 	
 	final protected function consultarLinea()
 	{
-		return DataAccess::selectWhere($this->linea, " ");
+		return DataAccess::selectWhere($this -> linea, " ");
+	}
+
+	final protected function consultarLineasXid($idlinea)
+	{
+        $this->linea ->setIdLinea($idlinea);	
+    	DataAccess::read($this -> linea);
+		
+    	return $this -> linea -> getData()[1];
 	}
 }
 ?>

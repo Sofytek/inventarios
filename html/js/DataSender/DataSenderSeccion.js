@@ -35,7 +35,7 @@ function pressButton()
   var JSON = $.parseJSON('{"idseccion":0, "nombre":"'+seccion+'", "activo":'+activo+', "iddependencia":'+dependencia+', "direccion":"'+direccion+'", "telefono":"'+telefono+'", "bodega":"'+bodega+'", "cc_admin":'+ccAdmin+'}'); 
   var nproceso = 1; 
   
-  $.post("../logica/ScriptsPHP/requestSeccion.php",{Json:JSON, nproceso: nproceso}, dataR); 
+  $.post("../Logica/ScriptsPHP/requestSeccion.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -63,7 +63,7 @@ function redireccionar()
 function prepareData()
 {
 	var nproceso = 3;
-	$.post("../logica/ScriptsPHP/requestSeccion.php",{nproceso: nproceso}, responsePrepareData);	
+	$.post("../Logica/ScriptsPHP/requestSeccion.php",{nproceso: nproceso}, responsePrepareData);	
 	return false;
 }
 

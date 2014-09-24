@@ -8,7 +8,7 @@ abstract class ControlMarca extends SystemControl
 	public function __construct($session)
 	{
 		parent::__construct($session);
-		$this->marca = null;
+		$this -> marca = null;
 	}
 
 	public function __destruct()
@@ -18,7 +18,7 @@ abstract class ControlMarca extends SystemControl
 
 	public function setMarca($arrmarca)
 	{
-		$this->marca = new Marca($arrmarca);		
+		$this -> marca = new Marca($arrmarca);		
 	}
 
 	/*
@@ -28,7 +28,7 @@ abstract class ControlMarca extends SystemControl
 	//crea una marca
 	final public function crearMarca()
 	{
-		if($this->marca == null){
+		if($this -> marca == null){
 			throw new Exception('Marca sin datos');
 		}
 		DataAccess::write($this->marca);
@@ -37,7 +37,7 @@ abstract class ControlMarca extends SystemControl
 	
 	//modifica una Marca existente
 	final protected function modificarMarca(){
-		if($this->marca != null){
+		if($this->marca == null){
 			throw new Exception('Marca sin datos');
 		}
 		DataAccess::update($this->marca);	
@@ -53,7 +53,15 @@ abstract class ControlMarca extends SystemControl
 	
 	final protected function consultarMarcas()
 	{
-		return DataAccess::selectWhere($this->marca, " ");
+		return DataAccess::selectWhere($this -> marca, " ");
+	}
+
+	final protected function consultarMarcasXid($idmarca)
+	{
+        $this->marca ->setIdMarca($idmarca);	
+    	DataAccess::read($this->marca);
+		
+    	return $this -> marca -> getData()[1];
 	}
 }
 ?>

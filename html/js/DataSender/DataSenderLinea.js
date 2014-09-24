@@ -24,8 +24,9 @@ function pressButton()
   }
 
   var JSON = $.parseJSON('{"idlinea":0, "nombre":"'+nomLinea+'", "activo":'+activo+'}'); 
-  
-  $.post("../logica/ScriptsPHP/requestLinea.php",{Json:JSON}, dataR); 
+  var nproceso = 1; 
+
+  $.post("../Logica/ScriptsPHP/requestLinea.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -46,5 +47,5 @@ function dataR(bandera)
 
 function redireccionar()
 {
-	location.href = "main.html";	
+	location.href = "consultaLinea.html";	
 }

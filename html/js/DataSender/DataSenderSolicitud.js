@@ -30,7 +30,7 @@ function pressButton()
 
   var nproceso = 1; 
   
-  $.post("../logica/ScriptsPHP/requestSolicitud.php",{Json:JSON, nproceso: nproceso}, dataR); 
+  $.post("../Logica/ScriptsPHP/requestSolicitud.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -57,7 +57,7 @@ function redireccionar()
 function prepareData()
 {
 	var nproceso = 3;
-	$.post("../logica/ScriptsPHP/requestSolicitud.php",{nproceso: nproceso}, responsePrepareData);	
+	$.post("../Logica/ScriptsPHP/requestSolicitud.php",{nproceso: nproceso}, responsePrepareData);	
 	return false;
 }
 

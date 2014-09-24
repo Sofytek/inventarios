@@ -21,7 +21,7 @@ class Marca implements IDataAccess{
 	}
 
 	public function getIdMarca(){
-		return $idMarca; 
+		return $this -> idMarca; 
 	}
 
 	public function setNombre($nombre){
@@ -54,9 +54,9 @@ class Marca implements IDataAccess{
 
 	public function setData($arrayData)
 	{
-		$this->idLinea = Tools::validate($arrayData['idmarca']);
-		$this->nombre = Tools::validate($arrayData['nombre']);
-		$this->activo = Tools::validate($arrayData['activo']);
+		$this->idLinea = $arrayData['idmarca'];
+		$this->nombre = $arrayData['nombre'];
+		$this->activo = $arrayData['activo'];
 	}
 }
 

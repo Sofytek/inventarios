@@ -24,8 +24,9 @@ function pressButton()
   }
 
   var JSON = $.parseJSON('{"idmarca":0, "nombre":"'+marc+'", "activo":'+activo+'}'); 
-  
-  $.post("../logica/ScriptsPHP/requestMarca.php",{Json:JSON}, dataR); 
+  var nproceso = 1; 
+
+  $.post("../Logica/ScriptsPHP/requestMarca.php",{Json:JSON, nproceso: nproceso}, dataR); 
   return false;
 }
 
@@ -46,5 +47,5 @@ function dataR(bandera)
 
 function redireccionar()
 {
-	location.href = "main.html";	
+	location.href = "consultaMarca.html";	
 }

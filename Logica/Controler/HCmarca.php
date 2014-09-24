@@ -2,13 +2,21 @@
 
 require 'ControlMarca.php';
 
-class HCmarca extends ControlMarca{
+class HCmarca extends ControlMarca
+{
 
-	public function __construct($session){
+	public function __construct($session)
+	{
 		parent::__construct($session);
 	}
 
-	public function cargarMarca($arrmarca){
+	public function __destruct()
+    {
+        parent::__destruct();
+    }
+
+	public function cargarMarca($arrmarca)
+	{
 		parent::setMarca($arrmarca);
 	}
 	
@@ -17,5 +25,9 @@ class HCmarca extends ControlMarca{
 		return $result = parent::consultarMarcas();
 	}
 
+	public function obtenerMarcaXid($idempresa)
+	{
+		return $result = parent::consultarEmpresasXid($idempresa);
+	}
 }
 ?>
